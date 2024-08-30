@@ -1,1 +1,10 @@
-<app-landin-page></app-landin-page>
+<div class="main-container" [ngClass]="{ 'adjusted-width': this.scrollbarService.scrollBarStatus }">
+    <app-landin-page></app-landin-page>
+    <app-about-me></app-about-me>
+    <app-arrow [arrowTriggerSkill]="true" position="right"></app-arrow>
+    <app-my-skills></app-my-skills>
+    <app-arrow [arrowTriggerProject]="true" position="left"></app-arrow>
+    <app-projects></app-projects>
+    <app-arrow [arrowTriggerContact]="true" position="right"></app-arrow>
+    <app-contact></app-contact>
+</div>

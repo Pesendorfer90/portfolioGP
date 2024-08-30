@@ -1,29 +1,27 @@
-<main id="headerUp">
-    <header class="header">
-        <h1>Frontend<br>
-            Developer</h1>
-
-        <div class="name-container">
-            <div class="border"></div>
-            <p>Gerald Pesendorfer</p>
-        </div>
-    </header>
-
-    <div class="basic-information">
-        <p class="email"  fragment="contactSection" >pesendorfer.gerald&#64;hotmail.com</p>
-        <!-- [routerLink]="['/']" 
-         (click)="scrollToArea('contactSection')"
-        -->
-
-        <div class="info-right"  fragment="aboutMe" >
-            <!-- [routerLink]="['/']" 
-            (click)="scrollToArea('aboutMe')" 
-            -->
-            <div class="animation-container">
-                <img src=".\assets\img\arrow.png">
+<div class="landing-page-container">
+    <main id="headerUp">
+        <header class="header">
+            <h1>Frontend<br>
+                Developer</h1>
+            <div class="name-container">
+                <div class="border"></div>
+                <p>Gerald Pesendorfer</p>
             </div>
-            <p>Scroll<br>
-                Down</p>
+        </header>
+
+        <div class="basic-information">
+            <p class="email" [routerLink]="['/']" 
+         (click)="scrollToArea('contactSection')">pesendorfer.gerald&#64;hotmail.com</p>
+
+
+            <div class="info-right" [routerLink]="['/']" fragment="aboutMe"
+            (click)="scrollToArea('aboutMe')">
+                <div class="animation-container">
+                    <img src="assets\img\arrow.png">
+                </div>
+                <p>Scroll<br>
+                    Down</p>
+            </div>
         </div>
-    </div>
-</main>
+    </main>
+</div>

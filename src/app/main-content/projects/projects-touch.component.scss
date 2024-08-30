@@ -1,0 +1,46 @@
+// .project-base {
+//     display: flex;
+//     align-items: center;
+//     max-width: 1440px;
+//     height: 500px;
+//     margin-bottom: 70px;
+
+//     .pointer-base {
+//         height: 75px !important;
+//         width: 75px !important;
+//         opacity: 1 !important;
+//     }
+
+//     .image .preview-img,
+//     .image-reverse .preview-img {
+//         filter: grayscale(0) !important;
+//     }
+
+//     .image::before,
+//     .image-reverse::before {
+//         opacity: 1;
+//     }
+
+//     .description,
+//     .description-reverse {
+//         transform: translate(0%) !important;
+//     }
+// }
+
+// .project {
+//     @extend .project-base;
+//     flex-direction: row;
+
+//     .pointer {
+//         transform: translate(+50%, -50%) rotate(0deg) !important;
+//     }
+// }
+
+// .project-reverse {
+//     @extend .project-base;
+//     flex-direction: row-reverse;
+
+//     .pointer-reverse {
+//         transform: translate(-50%, -50%) rotate(270deg) !important;
+//     }
+// }

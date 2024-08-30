@@ -1,0 +1,17 @@
+<div class="arrow-container">
+    <div [class.grow-box-right]="position == 'right'" 
+    [class.grow-box-left]="position == 'left'">
+        <div class="arrow" 
+        [class.arrow-animation-container-right]="arrowTriggerSkill && position == 'right'"
+        [class.arrow-animation-container-left]="arrowTriggerSkill && position == 'left'">
+            <div [class.diagonal-right]="position == 'right'"
+            [class.diagonal-left]="position == 'left'"
+            [class.diagonal-line-animation]="arrowTriggerSkill">
+        </div>
+            <div [class.vertical-right]="position == 'right'"
+            [class.vertical-left]="position == 'left'"></div>
+            <div [class.horizontal-right]="position == 'right'"
+            [class.horizontal-left]="position == 'left'"></div>
+        </div>
+    </div>
+</div>

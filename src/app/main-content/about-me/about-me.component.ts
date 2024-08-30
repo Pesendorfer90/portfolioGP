@@ -3,17 +3,17 @@ import { RouterModule } from '@angular/router';
 import { ScrollToService } from '../../service/scroll-to.service';
 
 @Component({
-  selector: 'app-landin-page',
+  selector: 'app-about-me',
   standalone: true,
   imports: [RouterModule],
-  templateUrl: './landin-page.component.html',
-  styleUrl: './landin-page.component.scss'
+  templateUrl: './about-me.component.html',
+  styleUrl: './about-me.component.scss'
 })
-export class LandinPageComponent {
-
+export class AboutMeComponent {
+  
   constructor(private scrollToService: ScrollToService) { }
 
   scrollToArea(link: string) {
-    this.scrollToService.scrollToElement(link)
+    this.scrollToService.scrollToElement(link);
   }
 }

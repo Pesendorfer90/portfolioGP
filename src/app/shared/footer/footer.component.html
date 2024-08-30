@@ -1,0 +1,38 @@
+<div class="footer">
+    <div class="footer-container" [ngClass]="{ 'footer-padding-show': this.scrollbarService.scrollBarStatus }">
+        <div class="footer-left">
+            <img src="assets/img/logo.png" alt="">
+            <span>© Gerald Pesendorfer 2024</span>
+        </div>
+        <div class="footer-right">
+            <div class="links">
+                <a class="link1" href="https://github.com/Pesendorfer90" target="_blank">
+                    <img src="assets/img/sozials/github.png" id="link1" (mouseenter)="onMouseEnter('link1')"
+                        (mouseleave)="onMouseOut('link1')" (touchend)="onMouseOut('link1')" (touchcancel)="onMouseOut('link1')"
+                        [ngClass]="{'hover-link': linkAnimationStates['link1'].enter, 'reset-link': linkAnimationStates['link1'].leave}">
+                </a>
+                <a class="link2" >
+                    <!-- (click)="scrollToArea('contactSection')" -->
+                    <img src="assets/img/sozials/email.png" id="link2" (mouseenter)="onMouseEnter('link2')"
+                        (mouseleave)="onMouseOut('link2')" (touchend)="onMouseOut('link2')" (touchcancel)="onMouseOut('link2')"
+                        [ngClass]="{'hover-link': linkAnimationStates['link2'].enter, 'reset-link': linkAnimationStates['link2'].leave}">
+                </a>
+                <a class="link3" href="https://www.linkedin.com/in/gerald-pesendorfer-432091246/" target="_blank">
+                    <img src="assets/img/sozials/linkedin.png" id="link3" (mouseenter)="onMouseEnter('link3')"
+                        (mouseleave)="onMouseOut('link3')" (touchend)="onMouseOut('link3')" (touchcancel)="onMouseOut('link3')"
+                        [ngClass]="{'hover-link': linkAnimationStates['link3'].enter, 'reset-link': linkAnimationStates['link3'].leave}">
+                </a>
+            </div>
+            <div class="legal-notice">
+                <div>
+                    <a routerLink="/legal-notice" routerLinkActive="active">Legal Notice</a>
+                </div>
+            </div>
+        </div>
+        <div class="legal-notice-responsiv">
+            <div>
+                <a routerLink="/legal-notice" routerLinkActive="active">Legal Notice</a>
+            </div>
+        </div>
+    </div>
+</div>

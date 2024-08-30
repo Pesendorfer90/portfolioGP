@@ -1,0 +1,296 @@
+.arrow-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 80px 0 30px 0;
+}
+
+
+.arrow-grow-box {
+    width: 1040px;
+    height: 225px;
+    display: flex;
+}
+
+.grow-box-right {
+    justify-content: flex-end;
+    @extend .arrow-grow-box
+}
+
+.grow-box-left {
+    justify-content: flex-start;
+    @extend .arrow-grow-box
+}
+
+
+.arrow {
+    position: relative;
+    width: 152px;
+    height: 152px;
+}
+
+.line-base {
+    background-color: black;
+    position: absolute;
+}
+
+
+.diagonal-line {
+    width: 215px;
+    height: 4px;
+    bottom: 4px;
+    @extend .line-base;
+}
+
+.diagonal-right {
+    left: 2px;
+    transform-origin: left center;
+    transform: rotate(-45deg);
+    @extend .diagonal-line;
+}
+
+.diagonal-left {
+    right: 2px;
+    transform-origin: right center;
+    transform: rotate(45deg);
+    @extend .diagonal-line;
+}
+
+
+.vertical-line {
+    width: 4px;
+    height: 80px;
+    bottom: 4px;
+    @extend .line-base;
+}
+
+.vertical-right {
+    left: 0px;
+    @extend .vertical-line;
+}
+
+.vertical-left {
+    right: 0px;
+    @extend .vertical-line;
+}
+
+
+.horizontal-line {
+    width: 80px;
+    height: 4px;
+    bottom: 4px;
+    @extend .line-base;
+}
+
+.horizontal-right {
+    left: 0px;
+    @extend .horizontal-line;
+}
+
+.horizontal-left {
+    right: 0px;
+    @extend .horizontal-line;
+}
+
+
+.diagonal-line-animation {
+    animation: diagonalLine 0.5s ease-in-out forwards;
+}
+
+@keyframes diagonalLine {
+    0% {
+        width: 215px;
+    }
+
+    50% {
+        width: 317px;
+    }
+
+    100% {
+        width: 215px;
+    }
+}
+
+
+.arrow-animation-container-right {
+    animation: containerRight 0.5s ease-in-out forwards;
+}
+
+.arrow-animation-container-left {
+    animation: containerLeft 0.5s ease-in-out forwards;
+}
+
+@keyframes containerRight {
+    0% {
+        width: 152px;
+        height: 152px;
+    }
+
+    50% {
+        width: calc(152px + 72px);
+        height: calc(152px + 72px);
+        padding-top: 0px;
+        padding-right: 0px;
+    }
+
+    100% {
+        width: 152px;
+        height: 152px;
+        padding-top: 72px;
+        padding-right: 72px;
+    }
+}
+
+@keyframes containerLeft {
+    0% {
+        width: 152px;
+        height: 152px;
+    }
+
+    50% {
+        width: calc(152px + 72px);
+        height: calc(152px + 72px);
+        padding-top: 0px;
+        padding-left: 0px;
+    }
+
+    100% {
+        width: 152px;
+        height: 152px;
+        padding-top: 72px;
+        padding-left: 72px;
+    }
+}
+
+
+
+@media (max-width: 1350px) {
+    .arrow-grow-box {
+        width: 744px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .arrow-grow-box {
+        width: 712px;
+    }
+}
+
+
+@media (max-width: 850px) {
+    .arrow-grow-box {
+        width: 600px;
+    }
+}
+
+
+@media (max-width: 700px) {
+    .arrow-grow-box {
+        width: 455px;
+    }
+}
+
+
+@media (max-width: 550px) {
+    .arrow-container {
+        padding: 50px 0 10px 0;
+    }
+
+    .arrow-grow-box {
+        width: 370px;
+        height: 158px;
+    }
+
+    .arrow {
+        width: 106px;
+        height: 106px;
+
+        .diagonal-line {
+            width: 150px;
+        }
+
+        .vertical-line {
+            height: 56px;
+        }
+
+        .horizontal-line {
+            width: 56px;
+        }
+
+        .diagonal-line-animation {
+            animation: diagonalLineResponsiv 0.5s ease-in-out forwards;
+        }
+
+        @keyframes diagonalLineResponsiv {
+            0% {
+                width: 150px;
+            }
+
+            50% {
+                width: 222px;
+            }
+
+            100% {
+                width: 150px;
+            }
+        }
+    }
+
+    .arrow-animation-container-right {
+        animation: containerRightResponsiv 0.5s ease-in-out forwards;
+    }
+    
+    .arrow-animation-container-left {
+        animation: containerLeftResponsiv 0.5s ease-in-out forwards;
+    }
+
+    @keyframes containerRightResponsiv {
+        0% {
+            width: 106px;
+            height: 106px;
+        }
+
+        50% {
+            width: calc(106px + 50px);
+            height: calc(106px + 50px);
+            padding-top: 0px;
+            padding-right: 0px;
+        }
+
+        100% {
+            width: 106px;
+            height: 106px;
+            padding-top: 50px;
+            padding-right: 50px;
+        }
+    }
+
+    @keyframes containerLeftResponsiv {
+        0% {
+            width: 106px;
+            height: 106px;
+        }
+
+        50% {
+            width: calc(106px + 50px);
+            height: calc(106px + 50px);
+            padding-top: 0px;
+            padding-left: 0px;
+        }
+
+        100% {
+            width: 106px;
+            height: 106px;
+            padding-top: 50px;
+            padding-left: 50px;
+        }
+    }
+}
+
+
+@media (max-width: 450px) {
+    .arrow-grow-box {
+        width: 280px;
+    }
+}

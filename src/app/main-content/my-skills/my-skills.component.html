@@ -1,0 +1,14 @@
+<section>
+    <div id="mySkills" class="skill-container">
+        <div class="border">
+            <div #arrowTrigger class="skill-text">
+                <h2>My skills</h2>
+            </div>
+            <div class="skill-icons"
+                *ngFor="let skill of ['Angular', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'Firebase', 'Git', 'Scrum', 'Rest-Api', 'Material Design'] ">
+                <img src="assets/img/my-skills/{{ skill }}.png">
+                <p>{{ skill }}</p>
+            </div>
+        </div>
+    </div>
+</section>
