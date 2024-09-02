@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { AnimationStates } from '../../models/animation-states'
 import { ScrollbarService } from '../../service/scrollbar.service';
+import { ScrollToService } from '../../service/scroll-to.service';
 
 @Component({
   selector: 'app-footer',
@@ -12,8 +13,11 @@ import { ScrollbarService } from '../../service/scrollbar.service';
 })
 export class FooterComponent {
   linkNames = ["link1", "link2", "link3"];
+  linkAnimationStates: { [key: string]: AnimationStates } = {}
 
-  constructor(public scrollbarService: ScrollbarService) {
+  constructor(
+    public scrollbarService: ScrollbarService, 
+    private scrollToService: ScrollToService) {
     this.initializeLinks(this.linkNames);
   }
 
@@ -27,9 +31,6 @@ export class FooterComponent {
     });
   }
 
-  linkAnimationStates: { [key: string]: AnimationStates } = {}
-  // linkAnimationStates: { [key: string]: { enter: boolean, leave: boolean } } = {};
-
   onMouseEnter(linkId: string) {
     this.linkAnimationStates[linkId] = { enter: true, leave: false, down: false };
   }
@@ -38,8 +39,7 @@ export class FooterComponent {
     this.linkAnimationStates[linkId] = { enter: false, leave: true, down: false };
   }
 
-  // scrollToArea(link: string) {
-  //   scrollToElement(link);
-  // }
-
+  scrollToArea(link: string) {
+    this.scrollToService.scrollToElement(link);
+  }
 }

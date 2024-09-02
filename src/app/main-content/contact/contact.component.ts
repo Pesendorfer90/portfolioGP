@@ -1,12 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, inject } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 import { AnimationStates } from '../../models/animation-states'
+import { RouterModule } from '@angular/router';
+import { ScrollToService } from '../../service/scroll-to.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ CommonModule, FormsModule ],
+  imports: [ CommonModule, FormsModule, RouterModule ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -16,8 +19,8 @@ export class ContactComponent {
   emailFocus: boolean = false;
   messageFocus: boolean = false;
   linkAnimationStates: { [key: string]: AnimationStates } = {};
-  // http = inject(HttpClient);
-  // mailTest = false;
+  http = inject(HttpClient);
+  mailTest = true;
 
   contactData = {
     name: "",
@@ -26,7 +29,7 @@ export class ContactComponent {
     privatPolicy: false,
   }
 
-  constructor() {
+  constructor(private scrollToService: ScrollToService) {
     this.linkAnimationStates['arrowUp'] = {
       enter: false,
       leave: false,
@@ -46,23 +49,23 @@ export class ContactComponent {
     },
   };
 
-  // onSubmit(ngForm: NgForm) {
-  //   if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-  //     this.http.post(this.post.endPoint, this.post.body(this.contactData))
-  //       .subscribe({
-  //         next: (response) => {
+  onSubmit(ngForm: NgForm) {
+    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+      this.http.post(this.post.endPoint, this.post.body(this.contactData))
+        .subscribe({
+          next: (response) => {
 
-  //           ngForm.resetForm();
-  //         },
-  //         error: (error) => {
-  //           console.error(error);
-  //         },
-  //         complete: () => console.info('send post complete'),
-  //       });
-  //   } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) { 
-  //     ngForm.resetForm();
-  //   }
-  // }
+            ngForm.resetForm();
+          },
+          error: (error) => {
+            console.error(error);
+          },
+          complete: () => console.info('send post complete'),
+        });
+    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) { 
+      ngForm.resetForm();
+    }
+  }
 
   onMouseEnter() {
     this.linkAnimationStates['arrowUp'] = { enter: true, leave: false, down: false };
@@ -72,8 +75,8 @@ export class ContactComponent {
     this.linkAnimationStates['arrowUp'] = { enter: false, leave: true, down: false };
   }
 
-  // scrollToArea(link: string) {
-  //   scrollToElement(link);
-  // }
+  scrollToArea(link: string) {
+    this.scrollToService.scrollToElement(link);
+  }
 
 }

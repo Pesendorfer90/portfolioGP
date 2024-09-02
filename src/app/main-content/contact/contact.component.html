@@ -10,8 +10,7 @@
             <p>Say hello! let's discuss your ideas and make it happen</p>
             <div class="input-container">
 
-                <form  #contactForm="ngForm">
-                    <!-- (ngSubmit)="onSubmit(contactForm)" -->
+                <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
                     <div class="befor-container" [ngClass]="{'input-focus input-name': nameFocus}">
                         <input #name="ngModel" [(ngModel)]="contactData.name" class="name" type="text" name="name"
                             placeholder="Your name" (focus)='nameFocus = true' (focusout)='nameFocus = false'
@@ -92,9 +91,9 @@
                     </div>
 
                     <div class="arrow-up-container">
-                        <div class="arrow-up" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseOut()"  fragment="headerUp">
-                            <!-- (click)="scrollToArea('headerUp')">
-                            [routerLink]="['/']"  -->
+                        <div class="arrow-up" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseOut()" (click)="scrollToArea('headerUp')"
+                            [routerLink]="['/']" fragment="headerUp">
+
                             <div class="line"
                                 [ngClass]="{'hover-up-line': linkAnimationStates['arrowUp'].enter, 'reset-down-line': linkAnimationStates['arrowUp'].leave}">
                             </div>

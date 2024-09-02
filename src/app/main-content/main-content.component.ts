@@ -20,11 +20,13 @@ import { ArrowComponent } from "./arrow/arrow.component";
     ContactComponent,
     ContactComponent,
     ArrowComponent
-],
+  ],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss'
 })
 export class MainContentComponent {
-  constructor(public scrollbarService: ScrollbarService) {}
 
+  constructor(public scrollbarService: ScrollbarService) { }
+
+  
 }

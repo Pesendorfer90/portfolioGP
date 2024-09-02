@@ -1,7 +1,7 @@
 <div class="footer">
     <div class="footer-container" [ngClass]="{ 'footer-padding-show': this.scrollbarService.scrollBarStatus }">
         <div class="footer-left">
-            <img src="assets/img/logo.png" alt="">
+            <img src="assets/img/logo.png">
             <span>© Gerald Pesendorfer 2024</span>
         </div>
         <div class="footer-right">
@@ -11,8 +11,7 @@
                         (mouseleave)="onMouseOut('link1')" (touchend)="onMouseOut('link1')" (touchcancel)="onMouseOut('link1')"
                         [ngClass]="{'hover-link': linkAnimationStates['link1'].enter, 'reset-link': linkAnimationStates['link1'].leave}">
                 </a>
-                <a class="link2" >
-                    <!-- (click)="scrollToArea('contactSection')" -->
+                <a class="link2" (click)="scrollToArea('contactSection')">
                     <img src="assets/img/sozials/email.png" id="link2" (mouseenter)="onMouseEnter('link2')"
                         (mouseleave)="onMouseOut('link2')" (touchend)="onMouseOut('link2')" (touchcancel)="onMouseOut('link2')"
                         [ngClass]="{'hover-link': linkAnimationStates['link2'].enter, 'reset-link': linkAnimationStates['link2'].leave}">
