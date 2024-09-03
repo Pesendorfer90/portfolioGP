@@ -4,6 +4,17 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class VisibilityCheckService {
-  constructor() {}
-  //https://stackoverflow.com/questions/49215634/angular-check-when-an-element-is-in-view
+
+  constructor() { }
+
+  isScrolledIntoView(div: any) {
+    if (div) {
+      const rect = div.nativeElement.getBoundingClientRect();
+      const topShown = rect.top >= 0;
+      const bottomShown = rect.bottom <= window.innerHeight;
+      console.log(topShown && bottomShown);
+       
+      // this.isTestDivScrolledIntoView = topShown && bottomShown;
+    }
+  }
 }
