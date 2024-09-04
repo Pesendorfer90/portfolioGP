@@ -12,7 +12,7 @@
 
                 <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
                     <div class="befor-container" [ngClass]="{'input-focus input-name': nameFocus}">
-                        <input #name="ngModel" [(ngModel)]="contactData.name" class="name" type="text" name="name"
+                        <input #name="ngModel" [(ngModel)]="contactData['name']" class="name" type="text" name="name"
                             placeholder="Your name" (focus)='nameFocus = true' (focusout)='nameFocus = false'
                             minlength="4" required>
                         <div class="status-img-container">
@@ -31,7 +31,7 @@
                     </div>
 
                     <div class="befor-container" [ngClass]="{'input-focus input-email': emailFocus}">
-                        <input #email="ngModel" [(ngModel)]="contactData.email" class="email" type="email" name="email"
+                        <input #email="ngModel" [(ngModel)]="contactData['email']" class="email" type="email" name="email"
                             placeholder="Your email" (focus)='emailFocus = true' (focusout)='emailFocus = false'
                             pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
                         <div class="status-img-container">
@@ -51,7 +51,7 @@
 
                     <div class="befor-container" [ngClass]="{'input-focus input-message': messageFocus}">
                         <div class="pull-tab"></div>
-                        <textarea #message="ngModel" [(ngModel)]="contactData.message" class="message" type="text"
+                        <textarea #message="ngModel" [(ngModel)]="contactData['message']" class="message" type="text"
                             name="message" placeholder="Your message" (focus)='messageFocus = true'
                             (focusout)='messageFocus = false' minlength="10" required></textarea>
                         <div class="status-img-container">
@@ -72,7 +72,7 @@
                     <div class="privacy-policy-box">
                         <div class="agree-hover" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">
                             <label class="agree-box">
-                                <input #privatePolicy="ngModel" type="checkbox" [(ngModel)]="contactData.privatPolicy"
+                                <input #privatePolicy="ngModel" type="checkbox" [(ngModel)]="contactData['privatPolicy']"
                                     name="privatPolicy" required>
                                 <span class="checkmark"></span>
                             </label>
@@ -105,7 +105,6 @@
                             </div>
                         </div>
                     </div>
-
                 </form>
             </div>
         </div>

@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { ScrollToService } from '../../service/scroll-to.service';
 import { HttpClient } from '@angular/common/http';
 import { VisibilityCheckService } from '../../service/visibility-check.service';
+import { MessageInfos } from '../../models/message-infos';
 
 @Component({
   selector: 'app-contact',
@@ -28,12 +29,7 @@ export class ContactComponent {
   monitoredDiv?: ElementRef<HTMLDivElement>;
   @Output() contactElement = new EventEmitter<boolean>();
 
-  contactData = {
-    name: "",
-    email: "",
-    message: "",
-    privatPolicy: false,
-  }
+  contactData: { [key: string]: MessageInfos} = {};
 
   constructor(private scrollToService: ScrollToService,
     public visibilityCheckService: VisibilityCheckService
@@ -71,6 +67,8 @@ export class ContactComponent {
           complete: () => console.info('send post complete'),
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) { 
+      console.log(this.contactData);
+      
       ngForm.resetForm();
     }
   }
@@ -88,13 +86,10 @@ export class ContactComponent {
   }
 
 
-
-
   @HostListener('window:scroll', ['$event'])
   @HostListener('window:resize', ['$event'])
-
   onWindowChange() {
-    this.contactElement.emit(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv))
+    this.contactElement.emit(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv));    
   }
 
 }
