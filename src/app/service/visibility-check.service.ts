@@ -7,14 +7,13 @@ export class VisibilityCheckService {
 
   constructor() { }
 
-  isScrolledIntoView(div: any) {
+  isScrolledIntoView(div: any): boolean {
     if (div) {
       const rect = div.nativeElement.getBoundingClientRect();
       const topShown = rect.top >= 0;
       const bottomShown = rect.bottom <= window.innerHeight;
       console.log(topShown && bottomShown);
-       
-      // this.isTestDivScrolledIntoView = topShown && bottomShown;
-    }
+      return topShown && bottomShown;
+    } else { return false}
   }
 }

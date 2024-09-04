@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, inject, Output, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { AnimationStates } from '../../models/animation-states'
 import { RouterModule } from '@angular/router';
 import { ScrollToService } from '../../service/scroll-to.service';
 import { HttpClient } from '@angular/common/http';
+import { VisibilityCheckService } from '../../service/visibility-check.service';
 
 @Component({
   selector: 'app-contact',
@@ -19,8 +20,13 @@ export class ContactComponent {
   emailFocus: boolean = false;
   messageFocus: boolean = false;
   linkAnimationStates: { [key: string]: AnimationStates } = {};
+
   http = inject(HttpClient);
   mailTest = true;
+
+  @ViewChild('contact', { static: false })
+  monitoredDiv?: ElementRef<HTMLDivElement>;
+  @Output() contactElement = new EventEmitter<boolean>();
 
   contactData = {
     name: "",
@@ -29,7 +35,9 @@ export class ContactComponent {
     privatPolicy: false,
   }
 
-  constructor(private scrollToService: ScrollToService) {
+  constructor(private scrollToService: ScrollToService,
+    public visibilityCheckService: VisibilityCheckService
+  ) {
     this.linkAnimationStates['arrowUp'] = {
       enter: false,
       leave: false,
@@ -77,6 +85,16 @@ export class ContactComponent {
 
   scrollToArea(link: string) {
     this.scrollToService.scrollToElement(link);
+  }
+
+
+
+
+  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:resize', ['$event'])
+
+  onWindowChange() {
+    this.contactElement.emit(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv))
   }
 
 }

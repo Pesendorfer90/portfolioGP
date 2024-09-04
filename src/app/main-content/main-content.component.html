@@ -1,14 +1,12 @@
 <div class="main-container" [ngClass]="{ 'adjusted-width': this.scrollbarService.scrollBarStatus }">
     <app-landin-page></app-landin-page>
     <app-about-me></app-about-me>
-    <app-arrow [arrowTriggerSkill]=isTestDivScrolledIntoView position="right"></app-arrow>
-    <div>
-        <h1>Is div shown? {{isTestDivScrolledIntoView ? 'Yes!' : 'No :-('}}</h1>
-<div #testDiv class="test">Test</div>
-    </div>
-    <app-my-skills #testDiv></app-my-skills>
-    <app-arrow [arrowTriggerProject]="true" position="left"></app-arrow>
-    <app-projects #project></app-projects>
-    <app-arrow [arrowTriggerContact]="true" position="right"></app-arrow>
-    <app-contact #contact></app-contact>
+    <app-arrow [arrowTriggerSkill]="arrowVisibleSkill" position="right"></app-arrow>
+    <app-my-skills (skillElement)="arrowVisibleSkill = $event"></app-my-skills>
+
+    <app-arrow [arrowTriggerProject]="arrowVisibleProject" position="left"></app-arrow>
+    <app-projects (projectElement)="arrowVisibleProject = $event"></app-projects>
+
+    <app-arrow [arrowTriggerContact]="arrowVisibleContact" position="right"></app-arrow>
+    <app-contact (contactElement)="arrowVisibleContact = $event"></app-contact>
 </div>

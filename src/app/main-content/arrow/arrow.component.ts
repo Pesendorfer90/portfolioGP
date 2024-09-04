@@ -8,8 +8,8 @@ import { Component, Input } from '@angular/core';
   styleUrl: './arrow.component.scss'
 })
 export class ArrowComponent {
-  @Input() arrowTriggerSkill: boolean = true;
-  @Input() arrowTriggerProject: boolean = true;
-  @Input() arrowTriggerContact: boolean = true;
+  @Input() arrowTriggerSkill: boolean = false;
+  @Input() arrowTriggerProject: boolean = false;
+  @Input() arrowTriggerContact: boolean = false;
   @Input() position: string = 'right';
 }

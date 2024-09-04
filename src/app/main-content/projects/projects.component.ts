@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Output, ViewChild } from '@angular/core';
+import { VisibilityCheckService } from '../../service/visibility-check.service';
 
 @Component({
   selector: 'app-projects',
@@ -52,4 +53,17 @@ export class ProjectsComponent {
     }
   ];
 
+  @ViewChild('project', { static: false })
+  monitoredDiv?: ElementRef<HTMLDivElement>;
+  @Output() projectElement = new EventEmitter<boolean>();
+
+
+  constructor(public visibilityCheckService: VisibilityCheckService) { }
+
+  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:resize', ['$event'])
+
+  onWindowChange() {
+    this.projectElement.emit(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv))
+  }
 }

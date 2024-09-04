@@ -2,8 +2,8 @@
     <div [class.grow-box-right]="position == 'right'" 
     [class.grow-box-left]="position == 'left'">
         <div class="arrow" 
-        [class.arrow-animation-container-right]="arrowTriggerSkill && position == 'right'"
-        [class.arrow-animation-container-left]="arrowTriggerSkill && position == 'left'">
+        [class.arrow-animation-container-right]="arrowTriggerSkill || arrowTriggerProject || arrowTriggerContact && position == 'right'"
+        [class.arrow-animation-container-left]="arrowTriggerSkill || arrowTriggerProject || arrowTriggerContact && position == 'left'">
             <div [class.diagonal-right]="position == 'right'"
             [class.diagonal-left]="position == 'left'"
             [class.diagonal-line-animation]="arrowTriggerSkill">
