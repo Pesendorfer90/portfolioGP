@@ -58,13 +58,10 @@ export class ProjectsComponent {
   monitoredDiv?: ElementRef<HTMLDivElement>;
   @Output() projectElement = new EventEmitter<boolean>();
 
-  // @ViewChildren('test') images!: QueryList<ElementRef>;
-  // monitoredImg1?: ElementRef<HTMLDivElement>;
-  // @Output() img1 = new EventEmitter<boolean>();
-
-  @ViewChild('test', { static: false })
+  @ViewChildren('test') images!: QueryList<ElementRef>;
   monitoredImg1?: ElementRef<HTMLDivElement>;
-  img1 = new EventEmitter<boolean>();;
+  @Output() img1 = new EventEmitter<boolean>();
+
 
   // @ViewChild('test', { static: false })
   // monitoredImg1?: ElementRef<ElementRef>;
@@ -96,16 +93,13 @@ export class ProjectsComponent {
 
   onWindowChange() {
     this.projectElement.emit(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv))
-    this.img1.emit(this.visibilityCheckService.isScrolledIntoView(this.monitoredImg1))
-    console.log(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv));
-    console.log(this.visibilityCheckService.isScrolledIntoView(this.monitoredImg1));
-    console.log(this.monitoredImg1);
+    // console.log(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv));
 
-    // this.images.forEach((img, index) => {
-    //   // console.log('Image:', img.nativeElement.getBoundingClientRect(), 'Index:', index + 1);
-    //   this.img1.emit(this.visibilityCheckService.isScrolledIntoView(img));
-    //   console.log(this.img1.emit(this.visibilityCheckService.isScrolledIntoView(img)));
-    //   // console.log(this.monitoredImg1);
-    // });
+    this.images.forEach((img, index) => {
+      // console.log('Image:', img.nativeElement.getBoundingClientRect(), 'Index:', index + 1);
+      this.img1.emit(this.visibilityCheckService.isScrolledIntoView(img));
+      console.log(this.img1.emit(this.visibilityCheckService.isScrolledIntoView(img)));
+      console.log(img, index);
+    });
   }
 }
