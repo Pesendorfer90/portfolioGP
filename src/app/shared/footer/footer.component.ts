@@ -12,7 +12,7 @@ import { ScrollToService } from '../../service/scroll-to.service';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-  linkNames = ["link1", "link2", "link3"];
+  linkNames: string[] = ["link1", "link2", "link3"];
   linkAnimationStates: { [key: string]: AnimationStates } = {}
 
   constructor(

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, EventEmitter, HostListener, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { VisibilityCheckService } from '../../service/visibility-check.service';
+import { TouchDetectionService } from '../../service/touch-detection.service';
 
 @Component({
   selector: 'app-projects',
@@ -57,6 +58,36 @@ export class ProjectsComponent {
   monitoredDiv?: ElementRef<HTMLDivElement>;
   @Output() projectElement = new EventEmitter<boolean>();
 
+  // @ViewChildren('test') images!: QueryList<ElementRef>;
+  // monitoredImg1?: ElementRef<HTMLDivElement>;
+  // @Output() img1 = new EventEmitter<boolean>();
+
+  @ViewChild('test', { static: false })
+  monitoredImg1?: ElementRef<HTMLDivElement>;
+  img1 = new EventEmitter<boolean>();;
+
+  // @ViewChild('test', { static: false })
+  // monitoredImg1?: ElementRef<ElementRef>;
+  // @Output() img1 = new EventEmitter<boolean>();
+
+  // @ViewChild('project2', { static: false })
+  // monitoredImg2?: ElementRef<HTMLDivElement>;
+  // @Output() img2 = new EventEmitter<boolean>();
+
+  // @ViewChild('project3', { static: false })
+  // monitoredImg3?: ElementRef<HTMLDivElement>;
+  // @Output() img3 = new EventEmitter<boolean>();
+  
+  // @ViewChild('project4', { static: false })
+  // monitoredImg4?: ElementRef<HTMLDivElement>;
+  // @Output() img4 = new EventEmitter<boolean>();
+  
+  // @ViewChild('project5', { static: false })
+  // monitoredImg5?: ElementRef<HTMLDivElement>;
+  // @Output() img5 = new EventEmitter<boolean>();
+
+  // monitoringList: string[] = ["this.project", "this.monitoredImg1", "this.monitoredImg2", "this.monitoredImg3", "this.monitoredImg4", "this.monitoredImg5"]
+
 
   constructor(public visibilityCheckService: VisibilityCheckService) { }
 
@@ -65,5 +96,16 @@ export class ProjectsComponent {
 
   onWindowChange() {
     this.projectElement.emit(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv))
+    this.img1.emit(this.visibilityCheckService.isScrolledIntoView(this.monitoredImg1))
+    console.log(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv));
+    console.log(this.visibilityCheckService.isScrolledIntoView(this.monitoredImg1));
+    console.log(this.monitoredImg1);
+
+    // this.images.forEach((img, index) => {
+    //   // console.log('Image:', img.nativeElement.getBoundingClientRect(), 'Index:', index + 1);
+    //   this.img1.emit(this.visibilityCheckService.isScrolledIntoView(img));
+    //   console.log(this.img1.emit(this.visibilityCheckService.isScrolledIntoView(img)));
+    //   // console.log(this.monitoredImg1);
+    // });
   }
 }

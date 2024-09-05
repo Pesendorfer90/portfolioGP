@@ -12,7 +12,7 @@
             <a [class.image]="i % 2 === 0" [class.image-reverse]="i % 2 === 1" [href]="item.projectLink"
                 target="_blank">
                 <img class="preview-img" [src]="item.image" alt="Bild {{ i + 1 }}">
-                <img [class.pointer]="i % 2 === 0" [class.pointer-reverse]="i % 2 === 1"
+                <img #previewImg [class.pointer]="i % 2 === 0" [class.pointer-reverse]="i % 2 === 1"
                     src="assets/img/projects/pointer.png" alt="">
             </a>
             <div [class.text]="i % 2 === 0" [class.text-reverse]="i % 2 === 1">
@@ -27,9 +27,11 @@
                         Github
                     </a>
                 </div>
+                <div id="test" #test>asdasd</div>
             </div>
         </div>
     </div>
+    <!-- <div #test></div> -->
     <!-- <div class="portfolio-list">
         <div *ngFor="let item of items; let i = index" id="project{{ i + 1 }}" [class.project]="i % 2 === 0 "
             [class.project-reverse]="i % 2 === 1" [appIntersectionObserver]="{ identifier: 'project' + (i + 1) }"
