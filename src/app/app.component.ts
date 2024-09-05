@@ -11,15 +11,15 @@ import { TouchDetectionService } from './service/touch-detection.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'protfolioGP';
 
-  isTouchDevice: boolean = false;
+  // isTouchDevice: boolean = false;
 
-  constructor(private touchDetectionService: TouchDetectionService) { }
+  // constructor(private touchDetectionService: TouchDetectionService) { }
 
-  ngOnInit(): void {
-    this.isTouchDevice = this.touchDetectionService.isTouchDevice();
-    console.log(this.isTouchDevice, "touch");
-  }
+  // ngOnInit(): void {
+  //   this.isTouchDevice = this.touchDetectionService.isTouchDevice();
+  //   console.log(this.isTouchDevice, "touch");
+  // }
 }

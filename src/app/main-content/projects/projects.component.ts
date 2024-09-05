@@ -1,16 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, EventEmitter, HostListener, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, OnInit, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { VisibilityCheckService } from '../../service/visibility-check.service';
 import { TouchDetectionService } from '../../service/touch-detection.service';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [ CommonModule ],
+  imports: [CommonModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit {
   items = [
     {
       image: './assets/img/projects/epl.png',
@@ -58,54 +58,76 @@ export class ProjectsComponent {
   monitoredDiv?: ElementRef<HTMLDivElement>;
   @Output() projectElement = new EventEmitter<boolean>();
 
-  // @ViewChildren('test') images!: QueryList<ElementRef>;
-  // monitoredImg1?: ElementRef<HTMLDivElement>;
-  // @Output() img1 = new EventEmitter<boolean>();
-
-  @ViewChild('test', { static: false })
+  @ViewChildren('imageTrigger') projects!: QueryList<ElementRef>;
   monitoredImg1?: ElementRef<HTMLDivElement>;
-  img1 = new EventEmitter<boolean>();;
+  project1 = new EventEmitter<boolean>();
+  project1Visible: boolean = false;
 
-  // @ViewChild('test', { static: false })
-  // monitoredImg1?: ElementRef<ElementRef>;
-  // @Output() img1 = new EventEmitter<boolean>();
+  monitoredImg2?: ElementRef<HTMLDivElement>;
+  project2 = new EventEmitter<boolean>();
+  project2Visible: boolean = false;
 
-  // @ViewChild('project2', { static: false })
-  // monitoredImg2?: ElementRef<HTMLDivElement>;
-  // @Output() img2 = new EventEmitter<boolean>();
+  monitoredImg3?: ElementRef<HTMLDivElement>;
+  project3 = new EventEmitter<boolean>();
+  project3Visible: boolean = false;
 
-  // @ViewChild('project3', { static: false })
-  // monitoredImg3?: ElementRef<HTMLDivElement>;
-  // @Output() img3 = new EventEmitter<boolean>();
-  
-  // @ViewChild('project4', { static: false })
-  // monitoredImg4?: ElementRef<HTMLDivElement>;
-  // @Output() img4 = new EventEmitter<boolean>();
-  
-  // @ViewChild('project5', { static: false })
-  // monitoredImg5?: ElementRef<HTMLDivElement>;
-  // @Output() img5 = new EventEmitter<boolean>();
+  monitoredImg4?: ElementRef<HTMLDivElement>;
+  project4 = new EventEmitter<boolean>();
+  project4Visible: boolean = false;
 
-  // monitoringList: string[] = ["this.project", "this.monitoredImg1", "this.monitoredImg2", "this.monitoredImg3", "this.monitoredImg4", "this.monitoredImg5"]
+  monitoredImg5?: ElementRef<HTMLDivElement>;
+  project5 = new EventEmitter<boolean>();
+  project5Visible: boolean = false;
+
+  isTouchDevice: boolean = false;
 
 
-  constructor(public visibilityCheckService: VisibilityCheckService) { }
+  constructor(public visibilityCheckService: VisibilityCheckService,
+    private touchDetectionService: TouchDetectionService
+  ) { }
+
+  ngOnInit(): void {
+    this.isTouchDevice = this.touchDetectionService.isTouchDevice();
+    console.log(this.isTouchDevice, "touch");
+  }
 
   @HostListener('window:scroll', ['$event'])
   @HostListener('window:resize', ['$event'])
 
   onWindowChange() {
     this.projectElement.emit(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv))
-    this.img1.emit(this.visibilityCheckService.isScrolledIntoView(this.monitoredImg1))
-    console.log(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv));
-    console.log(this.visibilityCheckService.isScrolledIntoView(this.monitoredImg1));
-    console.log(this.monitoredImg1);
-
-    // this.images.forEach((img, index) => {
-    //   // console.log('Image:', img.nativeElement.getBoundingClientRect(), 'Index:', index + 1);
-    //   this.img1.emit(this.visibilityCheckService.isScrolledIntoView(img));
-    //   console.log(this.img1.emit(this.visibilityCheckService.isScrolledIntoView(img)));
-    //   // console.log(this.monitoredImg1);
-    // });
+    this.projects.forEach((id, index) => {
+      if (index == 0) {
+        const visible = this.visibilityCheckService.isScrolledIntoView(id);
+        this.project1.emit(visible);
+        this.project1.subscribe((visible: boolean) => {
+          this.project1Visible = visible;
+        });
+      } if (index == 1) {
+        const visible = this.visibilityCheckService.isScrolledIntoView(id);
+        this.project2.emit(visible);
+        this.project2.subscribe((visible: boolean) => {
+          this.project2Visible = visible;
+        });
+      } if (index == 2) {
+        const visible = this.visibilityCheckService.isScrolledIntoView(id);
+        this.project3.emit(visible);
+        this.project3.subscribe((visible: boolean) => {
+          this.project3Visible = visible;
+        });
+      } if (index == 3) {
+        const visible = this.visibilityCheckService.isScrolledIntoView(id);
+        this.project4.emit(visible);
+        this.project4.subscribe((visible: boolean) => {
+          this.project4Visible = visible;
+        });
+      } if (index == 4) {
+        const visible = this.visibilityCheckService.isScrolledIntoView(id);
+        this.project5.emit(visible);
+        this.project5.subscribe((visible: boolean) => {
+          this.project5Visible = visible;
+        });
+      } 
+    });
   }
 }

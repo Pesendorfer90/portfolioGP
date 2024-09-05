@@ -3,11 +3,12 @@ import { Component } from '@angular/core';
 import { AnimationStates } from '../../models/animation-states'
 import { ScrollbarService } from '../../service/scrollbar.service';
 import { ScrollToService } from '../../service/scroll-to.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [ CommonModule ],
+  imports: [ CommonModule, RouterModule ],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
