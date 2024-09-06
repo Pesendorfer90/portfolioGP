@@ -30,7 +30,6 @@ export class NavbarComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     window.onload = () => {
       this.scrollbarService.scrollbarStatus();
-      console.log(this.scrollbarService.scrollBarStatus, 'hasScrollbar');
     }
   }
 

@@ -88,13 +88,13 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
     this.isTouchDevice = this.touchDetectionService.isTouchDevice();
-    console.log(this.isTouchDevice, "touch");
   }
 
   @HostListener('window:scroll', ['$event'])
   @HostListener('window:resize', ['$event'])
 
   onWindowChange() {
+    this.isTouchDevice = this.touchDetectionService.isTouchDevice();
     this.projectElement.emit(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv))
     this.projects.forEach((id, index) => {
       if (index == 0) {

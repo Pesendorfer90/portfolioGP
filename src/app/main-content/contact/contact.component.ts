@@ -23,7 +23,7 @@ export class ContactComponent {
   linkAnimationStates: { [key: string]: AnimationStates } = {};
 
   http = inject(HttpClient);
-  mailTest = true;
+  mailTest = false;
 
   @ViewChild('contact', { static: false })
   monitoredDiv?: ElementRef<HTMLDivElement>;
