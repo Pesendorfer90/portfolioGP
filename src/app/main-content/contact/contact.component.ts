@@ -29,7 +29,14 @@ export class ContactComponent {
   monitoredDiv?: ElementRef<HTMLDivElement>;
   @Output() contactElement = new EventEmitter<boolean>();
 
-  contactData: { [key: string]: MessageInfos} = {};
+  // contactData: { [key: string]: MessageInfos} = {};
+  contactData = {
+    name: "",
+    email: "",
+    message: "",
+  }
+
+  privatPolicy: boolean = false;
 
   constructor(private scrollToService: ScrollToService,
     public visibilityCheckService: VisibilityCheckService
@@ -37,7 +44,7 @@ export class ContactComponent {
     this.linkAnimationStates['arrowUp'] = {
       enter: false,
       leave: false,
-      down: false
+      down: false,
     };
   }
 
@@ -55,24 +62,26 @@ export class ContactComponent {
 
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+      console.log(this.contactData, '1');
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-
-            ngForm.resetForm();
+            console.log(this.contactData, '2');
+            // ngForm.resetForm();
           },
           error: (error) => {
             console.error(error);
+            console.log(this.contactData, '3');
           },
           complete: () => {
             console.info('send post complete');
-            console.log(this.contactData);
+            console.log(this.contactData, '4');
           }
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) { 
-      console.log(this.contactData);
+      console.log(this.contactData, '5');
       
-      ngForm.resetForm();
+      // ngForm.resetForm();
     }
   }
 
