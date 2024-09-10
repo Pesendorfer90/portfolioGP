@@ -61,7 +61,7 @@ section {
 
   &:hover {
     img {
-      animation: circle-animation 0.27s forwards linear;
+      animation: circleAnimation 0.27s forwards linear;
     }
 
     p {
@@ -69,43 +69,43 @@ section {
       color: #00BC8F;
     }
   }
+}
 
-  @keyframes circle-animation {
-    0% {
-      transform: translateX(0) scale(1);
-    }
+@keyframes circleAnimation {
+  0% {
+    transform: translateX(0) scale(1);
+  }
 
-    12% {
-      transform: translateX(25px) scale(0.9);
-    }
+  12% {
+    transform: translateX(25px) scale(0.9);
+  }
 
-    25% {
-      transform: translateX(50px) scale(0.8);
-    }
+  25% {
+    transform: translateX(50px) scale(0.8);
+  }
 
-    37% {
-      transform: translateX(25px) scale(0.6);
-    }
+  37% {
+    transform: translateX(25px) scale(0.6);
+  }
 
-    50% {
-      transform: translateX(0px) scale(0.4);
-    }
+  50% {
+    transform: translateX(0px) scale(0.4);
+  }
 
-    62% {
-      transform: translateX(-25px) scale(0.6);
-    }
+  62% {
+    transform: translateX(-25px) scale(0.6);
+  }
 
-    75% {
-      transform: translateX(-50px) scale(0.8);
-    }
+  75% {
+    transform: translateX(-50px) scale(0.8);
+  }
 
-    87% {
-      transform: translateX(-25px) scale(0.9);
-    }
+  87% {
+    transform: translateX(-25px) scale(0.9);
+  }
 
-    100% {
-      transform: translateX(0px) scale(1);
-    }
+  100% {
+    transform: translateX(0px) scale(1);
   }
 }
 
@@ -122,7 +122,6 @@ section {
 
 
 @media (max-width: 1350px) {
-
   .skill-container {
     width: 744px;
   }
@@ -138,7 +137,6 @@ section {
 
 
 @media (max-width: 1024px) {
-
   h2 {
     animation: pulse 3s infinite ease-in-out;
   }
@@ -176,7 +174,6 @@ section {
 
 
 @media (max-width: 850px) {
-
   .skill-container {
     width: 600px;
   }
@@ -184,7 +181,6 @@ section {
 
 
 @media (max-width: 700px) {
-
   .skill-container {
     width: 455px;
     padding-top: 20px;
@@ -205,7 +201,6 @@ section {
 
 
 @media (max-width: 550px) {
-
   .skill-container {
     width: 370px;
   }
@@ -230,7 +225,6 @@ section {
 
 
 @media (max-width: 450px) {
-
   .skill-container {
     width: 280px;
   }

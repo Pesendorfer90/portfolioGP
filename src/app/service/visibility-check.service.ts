@@ -4,9 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class VisibilityCheckService {
-
-  constructor() { }
-
+  
   isScrolledIntoView(div: any): boolean {
     if (div) {
       const rect = div.nativeElement.getBoundingClientRect();

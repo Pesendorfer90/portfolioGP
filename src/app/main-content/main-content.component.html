@@ -1,6 +1,7 @@
 <div class="main-container" [ngClass]="{ 'adjusted-width': this.scrollbarService.scrollBarStatus }">
     <app-landin-page></app-landin-page>
     <app-about-me></app-about-me>
+    
     <app-arrow [arrowTriggerSkill]="arrowVisibleSkill" position="right"></app-arrow>
     <app-my-skills (skillElement)="arrowVisibleSkill = $event"></app-my-skills>
 

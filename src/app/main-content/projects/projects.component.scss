@@ -1,263 +1,263 @@
 .portfolio-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .portfolio-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 530px;
-    margin-bottom: 100px;
-  
-    h2 {
-      font-family: Syne;
-      font-size: 78px;
-      font-weight: 800;
-      margin: 0 0 35px 0;
-      align-items: center;
-  
-      &:hover {
-        transition: color 0.190s ease-in-out;
-        color: #00BC8F;
-      }
-    }
-  
-    p {
-      font-family: Overpass;
-      font-size: 23px;
-      font-weight: 400;
-      margin: 0;
-    }
-  }
-  
-  .portfolio-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .project-base {
-    display: flex;
-    align-items: center;
-    max-width: 1440px;
-    height: 500px;
-    margin-bottom: 70px;
-  
-    &:hover {
-  
-      .pointer-base {
-        height: 75px !important;
-        width: 75px !important;
-        opacity: 1 !important;
-      }
-  
-      .image .preview-img,
-      .image-reverse .preview-img {
-        filter: grayscale(0) !important;
-      }
-  
-      .image::before,
-      .image-reverse::before {
-        opacity: 1;
-      }
-  
-      .description,
-      .description-reverse {
-        transform: translate(0%) !important;
-      }
-    }
-  }
-  
-  .project {
-    @extend .project-base;
-    flex-direction: row;
-  
-    &:hover {
-      .pointer {
-        transform: translate(+50%, -50%) rotate(0deg) !important;
-      }
-    }
-  }
-  
-  .project-reverse {
-    @extend .project-base;
-    flex-direction: row-reverse;
-  
-    &:hover {
-      .pointer-reverse {
-        transform: translate(-50%, -50%) rotate(270deg) !important;
-      }
-    }
-  }
-  
-  .image-base {
-    width: 50%;
-    position: relative;
-    cursor: pointer;
-  
-    &::before {
-      content: "";
-      position: absolute;
-      border: 4px solid black;
-      width: 100%;
-      height: 100%;
-      top: 20px;
-      opacity: 0.0;
-      transition: opacity 0.19s ease-in-out;
-      z-index: 2;
-    }
-  }
-  
-  .image {
-    @extend .image-base;
-  
-    &::before {
-      left: 20px;
-    }
-  }
-  
-  .image-reverse {
-    @extend .image-base;
-  
-    &::before {
-      right: 20px;
-    }
-  }
-  
-  .preview-img {
-    width: 100%;
-    position: relative;
-    z-index: 1;
-    filter: grayscale(1);
-  }
-  
-  .pointer-base {
-    height: 0px;
-    width: 0px;
-    z-index: 3;
-    position: absolute;
-    top: 50%;
-    transition: all 0.19s ease-in-out;
-    opacity: 0.0;
-  }
-  
-  .pointer {
-    @extend .pointer-base;
-    right: -26px;
-    transform: translate(+50%, -50%) rotate(135deg);
-  }
-  
-  .pointer-reverse {
-    @extend .pointer-base;
-    left: -26px;
-    transform: translate(-50%, -50%) rotate(135deg);
-  }
-  
-  .text-base {
-    width: 50%;
-    height: 100%;
-    position: relative;
-  }
-  
-  .text {
-    @extend .text-base;
-    padding-left: 150px;
-  }
-  
-  .text-reverse {
-    @extend .text-base;
-    padding-right: 150px;
-  }
-  
-  .count-base {
-    position: absolute;
-    top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.portfolio-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 530px;
+  margin-bottom: 100px;
+
+  h2 {
     font-family: Syne;
-    font-size: 48px;
-    font-weight: 700;
-  }
-  
-  .count {
-    @extend .count-base;
-    right: 0;
-  }
-  
-  .count-reverse {
-    @extend .count-base;
-    left: 0;
-  }
-  
-  .description-base {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 30px;
-    transition: all 0.19s ease-in-out;
-  
-    h3 {
-      font-family: Syne;
-      font-size: 45px;
-      font-weight: 800;
-      text-align: left;
-    }
-  
-    span {
-      font-family: Overpass;
-      font-size: 23px;
-      font-weight: 400;
-      color: #00BC8F;
-      text-align: left;
-    }
-  
-    p {
-      font-family: Overpass;
-      font-size: 16px;
-      font-weight: 400;
-      text-align: left;
-  
-    }
-  }
-  
-  .description {
-    @extend .description-base;
-    transform: translate(-124%) scale(0.8);
-  }
-  
-  .description-reverse {
-    @extend .description-base;
-    transform: translate(+124%) scale(0.8);
-  }
-  
-  .github-link {
-    display: flex;
-    justify-content: center;
+    font-size: 78px;
+    font-weight: 800;
+    margin: 0 0 35px 0;
     align-items: center;
-    border: 4px solid black;
-    width: 180px;
-    height: 60px;
+
+    &:hover {
+      transition: color 0.190s ease-in-out;
+      color: #00BC8F;
+    }
+  }
+
+  p {
     font-family: Overpass;
     font-size: 23px;
     font-weight: 400;
-    transition: 0.1s ease-out;
-    text-decoration: none;
-    color: black;
-  
-    &:hover {
-      width: 230px;
-      font-weight: 700;
+    margin: 0;
+  }
+}
+
+.portfolio-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-base {
+  display: flex;
+  align-items: center;
+  max-width: 1440px;
+  height: 500px;
+  margin-bottom: 70px;
+
+  &:hover {
+
+    .pointer-base {
+      height: 75px !important;
+      width: 75px !important;
+      opacity: 1 !important;
     }
-  
-    &:active {
-      background-color: black;
-      color: #FFFCF3;
-      width: 230px;
-      font-weight: 400;
+
+    .image .preview-img,
+    .image-reverse .preview-img {
+      filter: grayscale(0) !important;
+    }
+
+    .image::before,
+    .image-reverse::before {
+      opacity: 1;
+    }
+
+    .description,
+    .description-reverse {
+      transform: translate(0%) !important;
     }
   }
-  
-  @import 'projects-responsiv.component';
-  @import 'projects-touch.component';
+}
+
+.project {
+  @extend .project-base;
+  flex-direction: row;
+
+  &:hover {
+    .pointer {
+      transform: translate(+50%, -50%) rotate(0deg) !important;
+    }
+  }
+}
+
+.project-reverse {
+  @extend .project-base;
+  flex-direction: row-reverse;
+
+  &:hover {
+    .pointer-reverse {
+      transform: translate(-50%, -50%) rotate(270deg) !important;
+    }
+  }
+}
+
+.image-base {
+  width: 50%;
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    border: 4px solid black;
+    width: calc(100% - 4px);
+    height: calc(100% - 8px);
+    top: 20px;
+    opacity: 0.0;
+    transition: opacity 0.19s ease-in-out;
+    z-index: 2;
+  }
+}
+
+.image {
+  @extend .image-base;
+
+  &::before {
+    left: 20px;
+  }
+}
+
+.image-reverse {
+  @extend .image-base;
+
+  &::before {
+    right: 20px;
+  }
+}
+
+.preview-img {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  filter: grayscale(1);
+}
+
+.pointer-base {
+  height: 0px;
+  width: 0px;
+  z-index: 3;
+  position: absolute;
+  top: calc(50% + 22px);
+  transition: all 0.19s ease-in-out;
+  opacity: 0.0;
+}
+
+.pointer {
+  @extend .pointer-base;
+  right: -22px;
+  transform: translate(+50%, -50%) rotate(135deg);
+}
+
+.pointer-reverse {
+  @extend .pointer-base;
+  left: -22px;
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.text-base {
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+
+.text {
+  @extend .text-base;
+  padding-left: 150px;
+}
+
+.text-reverse {
+  @extend .text-base;
+  padding-right: 150px;
+}
+
+.count-base {
+  position: absolute;
+  top: 0;
+  font-family: Syne;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.count {
+  @extend .count-base;
+  right: 0;
+}
+
+.count-reverse {
+  @extend .count-base;
+  left: 0;
+}
+
+.description-base {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 30px;
+  transition: all 0.19s ease-in-out;
+
+  h3 {
+    font-family: Syne;
+    font-size: 45px;
+    font-weight: 800;
+    text-align: left;
+  }
+
+  span {
+    font-family: Overpass;
+    font-size: 23px;
+    font-weight: 400;
+    color: #00BC8F;
+    text-align: left;
+  }
+
+  p {
+    font-family: Overpass;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+
+  }
+}
+
+.description {
+  @extend .description-base;
+  transform: translate(-124%) scale(0.8);
+}
+
+.description-reverse {
+  @extend .description-base;
+  transform: translate(+124%) scale(0.8);
+}
+
+.github-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid black;
+  width: 180px;
+  height: 60px;
+  font-family: Overpass;
+  font-size: 23px;
+  font-weight: 400;
+  transition: 0.1s ease-out;
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    width: 230px;
+    font-weight: 700;
+  }
+
+  &:active {
+    background-color: black;
+    color: #FFFCF3;
+    width: 230px;
+    font-weight: 400;
+  }
+}
+
+@import 'projects-responsiv.component';
+@import 'projects-touch.component';

@@ -21,6 +21,7 @@ export class ContactComponent {
   emailFocus: boolean = false;
   messageFocus: boolean = false;
   linkAnimationStates: { [key: string]: AnimationStates } = {};
+  privatPolicy: boolean = false;
 
   http = inject(HttpClient);
   mailTest = false;
@@ -29,14 +30,12 @@ export class ContactComponent {
   monitoredDiv?: ElementRef<HTMLDivElement>;
   @Output() contactElement = new EventEmitter<boolean>();
 
-  // contactData: { [key: string]: MessageInfos} = {};
-  contactData = {
-    name: "",
-    email: "",
-    message: "",
-  }
-
-  privatPolicy: boolean = false;
+  contactData: { [key: string]: MessageInfos} = {};
+  // contactData = {
+  //   name: "",
+  //   email: "",
+  //   message: "",
+  // }
 
   constructor(private scrollToService: ScrollToService,
     public visibilityCheckService: VisibilityCheckService
@@ -47,7 +46,6 @@ export class ContactComponent {
       down: false,
     };
   }
-
 
   post = {
     endPoint: 'https://gerald-pesendorfer.at/sendMail.php',
@@ -62,26 +60,20 @@ export class ContactComponent {
 
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-      console.log(this.contactData, '1');
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-            console.log(this.contactData, '2');
-            // ngForm.resetForm();
+            ngForm.resetForm();
           },
           error: (error) => {
             console.error(error);
-            console.log(this.contactData, '3');
           },
           complete: () => {
             console.info('send post complete');
-            console.log(this.contactData, '4');
           }
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) { 
-      console.log(this.contactData, '5');
-      
-      // ngForm.resetForm();
+      ngForm.resetForm();
     }
   }
 
@@ -97,11 +89,9 @@ export class ContactComponent {
     this.scrollToService.scrollToElement(link);
   }
 
-
   @HostListener('window:scroll', ['$event'])
   @HostListener('window:resize', ['$event'])
   onWindowChange() {
     this.contactElement.emit(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv));    
   }
-
 }

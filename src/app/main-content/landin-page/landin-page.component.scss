@@ -30,33 +30,32 @@ header {
         display: flex;
         text-align: center;
     }
+}
 
-    .name-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: 'overpass';
-        font-weight: 800;
-        font-size: 48px;
-        gap: 12px;
+.name-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'overpass';
+    font-weight: 800;
+    font-size: 48px;
+    gap: 12px;
 
-        p {
-            text-align: center;
-            margin: 0;
-            color: #00BC8F;
-        }
+    p {
+        text-align: center;
+        margin: 0;
+        color: #00BC8F;
+    }
 
-        .border {
-            border-top: 3px solid black;
-            width: 450px;
-        }
+    .border {
+        border-top: 3px solid black;
+        width: 450px;
     }
 }
 
 .basic-information {
     height: 50%;
     width: 100%;
-    // min-height: 480px;
     font-size: 23px;
     font-family: 'overpass';
     display: flex;
@@ -109,7 +108,6 @@ header {
 
 
 @media (max-width: 1250px) {
-
     main {
         header {
             h1 {

@@ -11,11 +11,11 @@
     <div [ngClass]="{ 'show-menu': this.menu, 'hide-menu': !this.menu }" class="menu-container">
         <nav #nav>
             <div id="aboutMeLink" class="border" [routerLink]="['/']" fragment="aboutMe"
-                (click)="scrollToArea('aboutMe')">>
+                (click)="scrollToArea('aboutMe')">
                 <a>About me</a>
             </div>
             <div id="mySkillsLink" class="border" [routerLink]="['/']" fragment="mySkills"
-            (click)="scrollToArea('mySkills')">>
+            (click)="scrollToArea('mySkills')">
                 <a>My skills</a>
             </div>
             <div id="portfolioLink" class="border" [routerLink]="['/']" fragment="portfolio"
