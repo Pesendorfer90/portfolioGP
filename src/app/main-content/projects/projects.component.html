@@ -25,7 +25,8 @@
                     <h3>{{ item.name }}</h3>
                     <span>{{ item.techStack }}</span>
                     <p>{{ item.description }}</p>
-                    <a href="{{ item.gitLink }}" target="_blank" class="github-link">
+                    <a href="{{ item.gitLink }}" target="_blank" class="github-link"
+                    [class.github-link]="i % 2 === 0" [class.github-link-reverse]="i % 2 === 1">
                         Github
                     </a>
                 </div>

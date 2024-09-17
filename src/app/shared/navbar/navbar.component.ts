@@ -154,7 +154,6 @@ export class NavbarComponent implements AfterViewInit {
 
   /**
    * Handles the mouse enter event for a link, updating its animation state.
-   * This method is triggered when the mouse enters the area of a specific link. 
    * It updates the animation state for the given `linkId` by setting the `enter` state to `true`, 
    * and resetting the `leave` and `down` states to `false`.
    *
@@ -166,7 +165,6 @@ export class NavbarComponent implements AfterViewInit {
 
   /**
    * Handles the mouse out event for a link, updating its animation state.
-   * This method is triggered when the mouse leaves the area of a specific link. 
    * It updates the animation state for the given `linkId` by setting the `leave` state to `true`, 
    * and resetting the `enter` and `down` states to `false`.
    *

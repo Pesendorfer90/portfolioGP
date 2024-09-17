@@ -42,7 +42,7 @@ $font-sice-nav: 96px;
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.225s ease-in-out;
+    transition: transform 0.125s ease-in-out;
 }
 
 nav {
@@ -77,7 +77,7 @@ nav {
     }
 
     &:hover::before {
-        animation: border-animation 0.2s ease-out;
+        animation: border-animation 0.125s ease-out;
         animation-fill-mode: forwards;
     }
 
@@ -129,25 +129,24 @@ nav {
 }
 
 .menu-footer-content {
-    clip-path: polygon(0 0, 100% 11vw, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 13vh, 100% 100%, 0% 100%);
     background-color: #000000;
-    height: 250px;
+    height: 220px;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    padding: 0% 5% 50px;
+    padding: 0% 5% 30px;
 
     p,
-    a {
+    span {
         color: #FFFCF3;
-        text-decoration: none;
+        margin: 0;
     }
 
     p {
         font-size: 78px;
         font-family: Syne;
         font-weight: 800;
-        margin: 0;
 
         &:hover {
             transition: color 0.190s ease-in-out;
@@ -155,7 +154,7 @@ nav {
         }
     }
 
-    a {
+    span {
         font-size: 23px;
         font-family: Overpass;
     }
@@ -187,11 +186,11 @@ nav {
 }
 
 .hover-link {
-    animation: hover-link-active 0.2s ease-in-out forwards;
+    animation: hover-link-active 0.125s ease-in-out forwards;
 }
 
 .reset-link {
-    animation: hover-link-inaktiv 0.2s ease-in-out forwards;
+    animation: hover-link-inaktiv 0.125s ease-in-out forwards;
 }
 
 @keyframes hover-link-active {
@@ -219,9 +218,42 @@ nav {
 }
 
 
-@media (min-width: 1660px) {
+@media (max-width: 1660px) {
     .menu-footer-content {
-        clip-path: polygon(0 0, 100% 61%, 100% 100%, 0% 100%) !important;
+        clip-path: polygon(0 0, 100% 11vh, 100% 100%, 0% 100%) !important;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .menu-footer-content {
+        clip-path: polygon(0 0, 100% 8vh, 100% 100%, 0% 100%) !important;
+    }
+
+    .menu-footer-content {
+        div:first-child {
+            p {
+                animation: pulse-white 2.75s infinite ease-in-out;
+            }
+        }
+    }
+
+    @keyframes pulse-white {
+        10% {
+            color: rgb(255, 255, 255);
+        }
+
+        25% {
+            color: #00BC8F;
+        }
+
+        75% {
+            color: #00BC8F;
+        }
+
+        90% {
+            color: rgb(255, 255, 255);
+        }
     }
 }
 
@@ -253,37 +285,21 @@ nav {
 
             p {
                 font-size: 45px !important;
-                animation: pulse-white 2.75s infinite ease-in-out;
             }
 
-            @keyframes pulse-white {
-                10% {
-                    color: rgb(255, 255, 255);
-                }
-
-                25% {
-                    color: #00BC8F;
-                }
-
-                75% {
-                    color: #00BC8F;
-                }
-
-                90% {
-                    color: rgb(255, 255, 255);
-                }
-            }
-
-            a {
-                font-weight: 300;
+            span {
+                font-size: 20px;
             }
         }
     }
+}
 
-    .menu-footer-content div a {
-        font-size: 20px !important;
+@media (max-width: 550px) {
+    .menu-footer-content {
+        clip-path: polygon(0 0, 100% 6vh, 100% 100%, 0% 100%) !important;
     }
 }
+
 
 @media (max-width: 400px),
 (max-height: 613px) {
@@ -300,7 +316,13 @@ nav {
         }
     }
 
-    .menu-footer-content div a {
-        font-size: 18px !important;
+    .menu-footer-content {
+        clip-path: polygon(0 0, 100% 4vh, 100% 100%, 0% 100%) !important;
+
+        div:first-child {
+            span {
+                font-size: 18px;
+            }
+        }
     }
 }

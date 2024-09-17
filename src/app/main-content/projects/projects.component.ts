@@ -55,7 +55,6 @@ export class ProjectsComponent implements OnInit {
   ];
 
 
-
   @ViewChild('project', { static: false })
   monitoredDiv?: ElementRef<HTMLDivElement>;
   @Output() projectElement = new EventEmitter<boolean>();
@@ -72,17 +71,29 @@ export class ProjectsComponent implements OnInit {
     private touchDetectionService: TouchDetectionService
   ) { }
 
+  /** 
+   * This method sets up initial project events, visibility states, and detects if the device is a touch device.
+   * - Initializes an array of EventEmitters for project visibility.
+   * - Sets the initial project visibility to false for all projects.
+   * - Detects if the current device is a touch device.
+   */
   ngOnInit() {
-    // Initialisiere das Array für die Projekt-Events
     this.projectEvents = Array(5).fill(null).map(() => new EventEmitter<boolean>());
-    this.projectVisibility = Array(5).fill(false); // Für die Sichtbarkeit
+    this.projectVisibility = Array(5).fill(false);
     this.isTouchDevice = this.touchDetectionService.isTouchDevice();
   }
 
+  /** 
+   * Checks and emits the visibility status of the monitored element and project elements.
+   * This method evaluates whether the monitored element and each project are scrolled into view,
+   * then emits the visibility status for each. It also updates the internal project visibility state.
+   * 
+   * @HostListener scroll - Listens to the window scroll event.
+   * @HostListener resize - Listens to the window resize event.
+   */
   @HostListener('window:scroll', ['$event'])
   @HostListener('window:resize', ['$event'])
   onWindowChange() {
-    this.isTouchDevice = this.touchDetectionService.isTouchDevice();
     this.projectElement.emit(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv!));
 
     this.projects.forEach((id, index) => {

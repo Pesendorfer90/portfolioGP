@@ -266,7 +266,20 @@
 }
 
 .active {
-    animation: button-active 0.2s ease-in-out forwards;
+    animation: button-active 0.125s ease-in-out forwards;
+    transition: 0.1s ease-out;
+
+    &:hover {
+        width: 338px !important;
+        font-weight: 700 !important;
+    }
+
+    &:active {
+        background-color: #FFFCF3 !important;
+        color: black !important;
+        width: 338px !important;
+        font-weight: 400 !important;
+    }
 }
 
 .arrow-up-container {

@@ -70,13 +70,11 @@
   }
 
   .text {
-    padding-left: 0;
     display: flex;
     align-items: flex-start;
   }
 
   .text-reverse {
-    padding-right: 0;
     display: flex;
     justify-content: flex-end;
   }
@@ -120,10 +118,12 @@
 
   .description {
     align-items: flex-start;
+    padding-left: 0;
   }
 
   .description-reverse {
     align-items: flex-end;
+    padding-right: 0;
 
     p,
     span {
@@ -143,6 +143,10 @@
     &:active {
       width: 238px;
     }
+  }
+
+  .github-link-reverse {
+    transform: translate(0%);
   }
 }
 

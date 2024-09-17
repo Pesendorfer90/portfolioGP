@@ -17,9 +17,13 @@ export class MySkillsComponent {
 
   constructor(public visibilityCheckService: VisibilityCheckService) { }
 
+  /** 
+   * @HostListener scroll - Listens to the window scroll event.
+   * @HostListener resize - Listens to the window resize event.
+   * This method checks if the monitored element is scrolled into view and emits the result.
+   */
   @HostListener('window:scroll', ['$event'])
   @HostListener('window:resize', ['$event'])
-
   onWindowChange() {
     this.skillElement.emit(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv!))
   }

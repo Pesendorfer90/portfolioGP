@@ -13,6 +13,11 @@ export class LandinPageComponent {
 
   constructor(private scrollToService: ScrollToService) { }
 
+  /**
+   * This method triggers the scrolling to a specific element identified by the given link.
+   *
+   * @param {string} link - The identifier (e.g., ID or selector) of the element to scroll to.
+   */
   scrollToArea(link: string) {
     this.scrollToService.scrollToElement(link)
   }
