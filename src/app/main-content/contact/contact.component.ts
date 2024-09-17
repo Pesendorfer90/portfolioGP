@@ -92,6 +92,6 @@ export class ContactComponent {
   @HostListener('window:scroll', ['$event'])
   @HostListener('window:resize', ['$event'])
   onWindowChange() {
-    this.contactElement.emit(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv));    
+    this.contactElement.emit(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv!));    
   }
 }

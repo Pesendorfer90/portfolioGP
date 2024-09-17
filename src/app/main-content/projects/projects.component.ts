@@ -54,30 +54,16 @@ export class ProjectsComponent implements OnInit {
     }
   ];
 
+
+
   @ViewChild('project', { static: false })
   monitoredDiv?: ElementRef<HTMLDivElement>;
   @Output() projectElement = new EventEmitter<boolean>();
 
   @ViewChildren('imageTrigger') projects!: QueryList<ElementRef>;
-  monitoredImg1?: ElementRef<HTMLDivElement>;
-  project1 = new EventEmitter<boolean>();
-  project1Visible: boolean = false;
 
-  monitoredImg2?: ElementRef<HTMLDivElement>;
-  project2 = new EventEmitter<boolean>();
-  project2Visible: boolean = false;
-
-  monitoredImg3?: ElementRef<HTMLDivElement>;
-  project3 = new EventEmitter<boolean>();
-  project3Visible: boolean = false;
-
-  monitoredImg4?: ElementRef<HTMLDivElement>;
-  project4 = new EventEmitter<boolean>();
-  project4Visible: boolean = false;
-
-  monitoredImg5?: ElementRef<HTMLDivElement>;
-  project5 = new EventEmitter<boolean>();
-  project5Visible: boolean = false;
+  projectVisibility: boolean[] = [];
+  projectEvents: EventEmitter<boolean>[] = [];
 
   isTouchDevice: boolean = false;
 
@@ -86,48 +72,28 @@ export class ProjectsComponent implements OnInit {
     private touchDetectionService: TouchDetectionService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    // Initialisiere das Array für die Projekt-Events
+    this.projectEvents = Array(5).fill(null).map(() => new EventEmitter<boolean>());
+    this.projectVisibility = Array(5).fill(false); // Für die Sichtbarkeit
     this.isTouchDevice = this.touchDetectionService.isTouchDevice();
   }
 
   @HostListener('window:scroll', ['$event'])
   @HostListener('window:resize', ['$event'])
-
   onWindowChange() {
     this.isTouchDevice = this.touchDetectionService.isTouchDevice();
-    this.projectElement.emit(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv))
+    this.projectElement.emit(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv!));
+
     this.projects.forEach((id, index) => {
-      if (index == 0) {
-        const visible = this.visibilityCheckService.isScrolledIntoView(id);
-        this.project1.emit(visible);
-        this.project1.subscribe((visible: boolean) => {
-          this.project1Visible = visible;
+      const visible = this.visibilityCheckService.isScrolledIntoView(id);
+      if (this.projectEvents[index]) {
+        this.projectEvents[index].emit(visible);
+        this.projectEvents[index].subscribe((visible: boolean) => {
+          this.projectVisibility[index] = visible;
         });
-      } if (index == 1) {
-        const visible = this.visibilityCheckService.isScrolledIntoView(id);
-        this.project2.emit(visible);
-        this.project2.subscribe((visible: boolean) => {
-          this.project2Visible = visible;
-        });
-      } if (index == 2) {
-        const visible = this.visibilityCheckService.isScrolledIntoView(id);
-        this.project3.emit(visible);
-        this.project3.subscribe((visible: boolean) => {
-          this.project3Visible = visible;
-        });
-      } if (index == 3) {
-        const visible = this.visibilityCheckService.isScrolledIntoView(id);
-        this.project4.emit(visible);
-        this.project4.subscribe((visible: boolean) => {
-          this.project4Visible = visible;
-        });
-      } if (index == 4) {
-        const visible = this.visibilityCheckService.isScrolledIntoView(id);
-        this.project5.emit(visible);
-        this.project5.subscribe((visible: boolean) => {
-          this.project5Visible = visible;
-        });
-      } 
+      }
     });
   }
+
 }

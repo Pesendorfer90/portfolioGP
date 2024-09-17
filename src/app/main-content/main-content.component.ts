@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LandinPageComponent } from './landin-page/landin-page.component';
 import { AboutMeComponent } from './about-me/about-me.component';

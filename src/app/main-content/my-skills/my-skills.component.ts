@@ -21,6 +21,6 @@ export class MySkillsComponent {
   @HostListener('window:resize', ['$event'])
 
   onWindowChange() {
-    this.skillElement.emit(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv))
+    this.skillElement.emit(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv!))
   }
 }
