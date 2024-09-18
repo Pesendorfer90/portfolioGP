@@ -111,7 +111,7 @@
     height: calc(100% - 8px);
     top: 20px;
     opacity: 0.0;
-    transition: opacity 0.19s ease-in-out;
+    transition: opacity 0.07s ease-in-out;
     z-index: 2;
   }
 }
@@ -140,8 +140,8 @@
 }
 
 .pointer-base {
-  height: 35px;
-  width: 35px;
+  height: 45px;
+  width: 45px;
   z-index: 3;
   position: absolute;
   top: calc(50% + 22px);
@@ -198,7 +198,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: all 0.19s ease-in-out;
+  transition: transform 0.19s ease-in-out;
 
   h3 {
     font-family: Syne;

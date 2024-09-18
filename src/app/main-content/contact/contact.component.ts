@@ -7,6 +7,7 @@ import { ScrollToService } from '../../service/scroll-to.service';
 import { HttpClient } from '@angular/common/http';
 import { VisibilityCheckService } from '../../service/visibility-check.service';
 import { MessageInfos } from '../../models/message-infos';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-contact',
@@ -39,7 +40,8 @@ export class ContactComponent {
    * The constructor initializes the animation state for the 'arrowUp' link with default values.
    */
   constructor(private scrollToService: ScrollToService,
-    public visibilityCheckService: VisibilityCheckService
+    public visibilityCheckService: VisibilityCheckService,
+    private toastr:ToastrService
   ) {
     this.linkAnimationStates['arrowUp'] = {
       enter: false,
@@ -89,6 +91,7 @@ export class ContactComponent {
           },
           complete: () => {
             console.info('send post complete');
+            this.toastr.success('Message sent.');
             // Hier eine sendebestätigung einfügen
           }
         });
