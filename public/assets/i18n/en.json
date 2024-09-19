@@ -1,0 +1,11 @@
+{
+  "landingPage": {
+    "arrowText1": "Scroll",
+    "arrowText2": "Down"
+  },
+  "aboutMe": {
+    "title" : "About me",
+    "description": "I am a Front-end deverloper based in Katzelsdorf, Austria. I help designers and companies to bring their ideas to real life. Creativity and logical thinking are skills that I have developed to connect ideas into quality products.<br><br>If you think I'd be a good match for your projects, contact me!",
+    "button": "Let's talk"
+  }
+}

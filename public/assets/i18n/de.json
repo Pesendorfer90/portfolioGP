@@ -1,0 +1,11 @@
+{
+  "landingPage": {
+    "arrowText1": "Nach unten",
+    "arrowText2": "scrollen"
+  },
+  "aboutMe": {
+    "title": "Über mich",
+    "description": "Ich bin ein Frontend-Entwickler mit Sitz in Katzelsdorf, Österreich. Ich helfe Designern und Unternehmen dabei, ihre Ideen in die Realität umzusetzen. Kreativität und logisches Denken sind Fähigkeiten, die ich entwickelt habe, um Ideen in Qualitätsprodukte umzusetzen.<br><br>Wenn Sie glauben, dass ich gut zu Ihren Projekten passen würde, kontaktieren Sie mich!",
+    "button": "Lass uns reden"
+  }
+}

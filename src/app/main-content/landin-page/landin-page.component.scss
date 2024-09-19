@@ -41,7 +41,7 @@ header {
     font-size: 48px;
     gap: 12px;
 
-    p {
+    >p {
         text-align: center;
         margin: 0;
         color: #00BC8F;
@@ -84,6 +84,8 @@ header {
         height: 186px;
         overflow: hidden;
         position: relative;
+        display: flex;
+        justify-content: center;
 
         img {
 
@@ -103,7 +105,9 @@ header {
         }
     }
 
-
+    >p {
+        text-align: center;
+    }
 }
 
 
