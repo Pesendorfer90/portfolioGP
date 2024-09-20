@@ -13,8 +13,9 @@
     "arrowText2": "Down"
   },
   "aboutMe": {
-    "title": "About me",
-    "description": "I am a Front-end deverloper based in Katzelsdorf, Austria. I help designers and companies to bring their ideas to real life. Creativity and logical thinking are skills that I have developed to connect ideas into quality products.<br><br>If you think I'd be a good match for your projects, contact me!",
+    "h2": "About me",
+    "description1": "I am a Front-end deverloper based in Katzelsdorf, Austria. I help designers and companies to bring their ideas to real life. Creativity and logical thinking are skills that I have developed to connect ideas into quality products.",
+    "description2": "If you think I'd be a good match for your projects, contact me!",
     "button": "Let's talk"
   },
   "mySkills": {
@@ -33,7 +34,7 @@
   "contact": {
     "h2": "Say Hi!",
     "h3": "Want to discuss a new project?",
-    "p": "Say hello! let's discuss your ideas and make it happen",
+    "p": "Let's discuss your ideas and make it happen",
     "privacyPolicy": {
       "p1": "I've read the",
       "a": "privacy policy",
@@ -46,15 +47,15 @@
     "introduction1": "In the following data protection declaration we inform you about the most important aspects of data processing on our website. We collect and process personal data only on the basis of legal provisions (General Data Protection Regulation, Telecommunications Act 2003).",
     "introduction2": "As soon as you, as a user, access or visit our website, your IP address, as well as the start and end of the session, will be recorded. This is technically necessary and therefore constitutes a legitimate interest in accordance with Art. 6 para. 1 lit. f GDPR.",
     "contact": {
-      "h2Contact": "Contact with us",
+      "h2": "Contact with us",
       "contactDescription": "If you contact us either via our contact form on our website or by email, the data you provide will be stored with us for six months for the purpose of processing your request or in case of follow-up questions. Your transmitted data will not be shared without your consent."
     },
     "cookies": {
-      "h2Cookies": "Cookies",
+      "h2": "Cookies",
       "cookiesDescription": "Our website uses so-called cookies. These are small text files that are stored on your device with the help of the browser. They do not cause any damage. We use cookies to make our website more user-friendly. Some cookies remain stored on your device until you delete them. They allow us to recognize your browser during your next visit. If you do not want this, you can configure your browser to inform you about the setting of cookies and only allow them in individual cases. Disabling cookies may limit the functionality of our website."
     },
     "serverLogFiles": {
-      "h2LogFiles": "Server-Log Files",
+      "h2": "Server-Log Files",
       "LogFilesDescription": "This website and the associated provider automatically collect information during the use of the website in the form of so-called \"server log files.\" This specifically includes:",
       "list": {
         "li1": "IP address or hostname",
@@ -97,6 +98,7 @@
       "represented": "Represented by: "
     },
     "contact": {
+      "h2": "Contact",
       "phone": "Telephone number: "
     },
     "disclaimer": {

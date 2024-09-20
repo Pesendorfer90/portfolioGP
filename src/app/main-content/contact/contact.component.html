@@ -1,13 +1,13 @@
 <div class="contact-container"  id="contactSection">
     <div class="greet-container" #arrowTrigger3>
         <div class="greet">
-            <h2 #contact>Say Hi!</h2>
+            <h2 #contact>{{ 'contact.h2' | translate }}</h2>
         </div>
     </div>
     <div class="contact-main-container">
         <div class="contact-form">
-            <h3>Want to discuss a new project?</h3>
-            <p>Say hello! let's discuss your ideas and make it happen</p>
+            <h3>{{ 'contact.h3' | translate }}</h3>
+            <p>{{ 'contact.p' | translate }}</p>
             <div class="input-container">
 
                 <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
@@ -78,16 +78,17 @@
                             </label>
                         </div>
 
-                        <p class="privacy-policy-text">I've read the
-                            <a [ngClass]="{'hovered': isHovered}"  routerLink="/privacy-policy" routerLinkActive="active">privacy
-                                policy</a>
-                            and agree to the processing of my data as outlined.
+                        <p class="privacy-policy-text">{{ 'contact.privacyPolicy.p1' | translate }}
+                            <a [ngClass]="{'hovered': isHovered}"  routerLink="/privacy-policy" routerLinkActive="active">
+                                {{ 'contact.privacyPolicy.a' | translate }}
+                            </a>
+                            {{ 'contact.privacyPolicy.p2' | translate }}
                         </p>
                     </div>
                     
                     <div class="button-container">
                         <button [ngClass]="{'active': name.valid &&email.valid && message.valid && privatePolicy.valid}"
-                            type="submit">Send Message</button>
+                            type="submit">{{ 'contact.button' | translate }}</button>
                     </div>
 
                     <div class="arrow-up-container">

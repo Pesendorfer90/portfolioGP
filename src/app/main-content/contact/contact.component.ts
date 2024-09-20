@@ -8,11 +8,13 @@ import { HttpClient } from '@angular/common/http';
 import { VisibilityCheckService } from '../../service/visibility-check.service';
 import { MessageInfos } from '../../models/message-infos';
 import { ToastrService } from 'ngx-toastr';
+import { TranslationService } from '../../service/translation.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule, TranslateModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -41,7 +43,8 @@ export class ContactComponent {
    */
   constructor(private scrollToService: ScrollToService,
     public visibilityCheckService: VisibilityCheckService,
-    private toastr:ToastrService
+    private toastr:ToastrService,
+    public translate: TranslationService
   ) {
     this.linkAnimationStates['arrowUp'] = {
       enter: false,

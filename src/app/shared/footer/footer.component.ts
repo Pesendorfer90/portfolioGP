@@ -4,11 +4,13 @@ import { AnimationStates } from '../../models/animation-states'
 import { ScrollbarService } from '../../service/scrollbar.service';
 import { ScrollToService } from '../../service/scroll-to.service';
 import { RouterModule } from '@angular/router';
+import { TranslationService } from '../../service/translation.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, TranslateModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
@@ -18,7 +20,8 @@ export class FooterComponent {
 
   constructor(
     public scrollbarService: ScrollbarService,
-    private scrollToService: ScrollToService) {
+    private scrollToService: ScrollToService,
+    public translate: TranslationService) {
     this.initializeLinks(this.linkNames);
   }
 

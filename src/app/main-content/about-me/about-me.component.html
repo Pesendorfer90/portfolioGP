@@ -1,26 +1,20 @@
 <div class="about-me-container">
     <div id="aboutMe" class="introduction-container">
-        <h2>About me</h2>
+        <h2>{{ 'aboutMe.h2' | translate }}</h2>
         <div class="introduction-info">
             <div class="introduction-text">
                 <div>
                     <span>
-                        I am a Front-end deverloper based in Katzelsdorf, Austria. I help designers and companies to
-                        bring
-                        their
-                        ideas
-                        to real
-                        life. Creativity and logical thinking are skills that I have developed to connect ideas into
-                        quality
-                        products.<br>
+                        {{ 'aboutMe.description1' | translate }}
                         <br>
-                        If you think I'd be a good match for your projects, contact me!
-                    </span>
+                        <br>
+                        {{ 'aboutMe.description2' | translate }}
+                        </span>
                 </div>
                 <div class="button-container" [routerLink]="['/']"
                  (click)="scrollToArea('contactSection')" fragment="contactSection">
                     <button>
-                        Let's talk
+                        {{ 'aboutMe.button' | translate }}
                     </button>
                 </div>
             </div>

@@ -2,11 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, ElementRef, EventEmitter, HostListener, OnInit, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { VisibilityCheckService } from '../../service/visibility-check.service';
 import { TouchDetectionService } from '../../service/touch-detection.service';
+import { TranslationService } from '../../service/translation.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
@@ -68,7 +70,8 @@ export class ProjectsComponent implements OnInit {
 
 
   constructor(public visibilityCheckService: VisibilityCheckService,
-    private touchDetectionService: TouchDetectionService
+    private touchDetectionService: TouchDetectionService,
+    public translate: TranslationService
   ) { }
 
   /** 

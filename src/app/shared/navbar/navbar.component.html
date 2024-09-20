@@ -15,21 +15,21 @@
         <nav #nav>
             <div id="aboutMeLink" class="border" [routerLink]="['/']" fragment="aboutMe"
                 (click)="scrollToArea('aboutMe')">
-                <a>About me</a>
+                <a>{{ 'nav.link1' | translate }}</a>
             </div>
             <div id="mySkillsLink" class="border" [routerLink]="['/']" fragment="mySkills"
             (click)="scrollToArea('mySkills')">
-                <a>My skills</a>
+                <a>{{ 'nav.link2' | translate }}</a>
             </div>
             <div id="portfolioLink" class="border" [routerLink]="['/']" fragment="portfolio"
             (click)="scrollToArea('portfolio')">
-                <a>Portfolio</a>
+                <a>{{ 'nav.link3' | translate }}</a>
             </div>
         </nav>
         <div class="menu-footer">
             <div class="menu-footer-content">
                 <div>
-                    <p>Say Hi!</p>
+                    <p>{{ 'nav.p' | translate }}</p>
                     <span>pesendorfer.gerald&#64;hotmail.com</span>
                 </div>
                 <div class="links">

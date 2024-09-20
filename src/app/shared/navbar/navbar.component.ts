@@ -5,11 +5,13 @@ import { ScrollbarService } from '../../service/scrollbar.service';
 import { ScrollToService } from '../../service/scroll-to.service';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { LanguageSelectionComponent } from "./language-selection/language-selection.component";
+import { TranslationService } from '../../service/translation.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, RouterModule, LanguageSelectionComponent],
+  imports: [CommonModule, RouterModule, LanguageSelectionComponent, TranslateModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
@@ -24,7 +26,8 @@ export class NavbarComponent implements AfterViewInit {
   constructor(
     public scrollbarService: ScrollbarService,
     private scrollToService: ScrollToService,
-    private router: Router) {
+    private router: Router,
+    public translate: TranslationService) {
     this.initializeLinks(this.linkNames);
   }
 

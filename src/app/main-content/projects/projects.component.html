@@ -1,7 +1,7 @@
 <div id="portfolio" class="portfolio-container">
     <div class="portfolio-header">
         <h2 #project>Portfolio</h2>
-        <p #arrowTrigger2>This page is a sample of my work - please feel free to try them out.</p>
+        <p #arrowTrigger2>{{ 'portfolio.description' | translate }}</p>
     </div>
     <div class="portfolio-list">
         <div *ngFor="let item of items; let i = index" id="project{{ i + 1 }}" [class.project]="i % 2 === 0 "
@@ -24,7 +24,7 @@
                 <div [class.description]="i % 2 === 0" [class.description-reverse]="i % 2 === 1">
                     <h3>{{ item.name }}</h3>
                     <span>{{ item.techStack }}</span>
-                    <p>{{ item.description }}</p>
+                    <p>{{ 'portfolio.projects.' + (i + 1) | translate }}</p>
                     <a href="{{ item.gitLink }}" target="_blank" class="github-link"
                     [class.github-link]="i % 2 === 0" [class.github-link-reverse]="i % 2 === 1">
                         Github

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ScrollToService } from '../../service/scroll-to.service';
 import { TranslationService } from '../../service/translation.service';
-import { TranslateModule } from '@ngx-translate/core';  // Import TranslateModule
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-landin-page',

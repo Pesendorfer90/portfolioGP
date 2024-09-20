@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, EventEmitter, HostListener, Output, ViewChild } from '@angular/core';
 import { VisibilityCheckService } from '../../service/visibility-check.service';
+import { TranslationService } from '../../service/translation.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-my-skills',
   standalone: true,
-  imports: [ CommonModule ],
+  imports: [ CommonModule, TranslateModule ],
   templateUrl: './my-skills.component.html',
   styleUrl: './my-skills.component.scss'
 })
@@ -15,7 +17,9 @@ export class MySkillsComponent {
   @Output() skillElement = new EventEmitter<boolean>();
 
 
-  constructor(public visibilityCheckService: VisibilityCheckService) { }
+  constructor(public visibilityCheckService: VisibilityCheckService,
+    public translate: TranslationService
+  ) { }
 
   /** 
    * @HostListener scroll - Listens to the window scroll event.
