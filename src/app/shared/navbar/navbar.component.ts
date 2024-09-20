@@ -4,11 +4,12 @@ import { AnimationStates } from '../../models/animation-states'
 import { ScrollbarService } from '../../service/scrollbar.service';
 import { ScrollToService } from '../../service/scroll-to.service';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
+import { LanguageSelectionComponent } from "./language-selection/language-selection.component";
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, LanguageSelectionComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })

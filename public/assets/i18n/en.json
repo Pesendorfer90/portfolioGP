@@ -1,11 +1,112 @@
 {
+  "nav": {
+    "link1": "About me",
+    "link2": "My skills",
+    "link3": "Portfolio",
+    "p": "Say Hi!"
+  },
+  "footer": {
+    "a": "Legal Notice"
+  },
   "landingPage": {
     "arrowText1": "Scroll",
     "arrowText2": "Down"
   },
   "aboutMe": {
-    "title" : "About me",
+    "title": "About me",
     "description": "I am a Front-end deverloper based in Katzelsdorf, Austria. I help designers and companies to bring their ideas to real life. Creativity and logical thinking are skills that I have developed to connect ideas into quality products.<br><br>If you think I'd be a good match for your projects, contact me!",
     "button": "Let's talk"
+  },
+  "mySkills": {
+    "h2": "My Skills"
+  },
+  "portfolio": {
+    "description": "This page is a sample of my work - please feel free to try them out.",
+    "projects": {
+      "1": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
+      "2": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+      "3": "Based on the PokéAPI a simple library that provides and catalogues pokemon information.",
+      "4": "",
+      "5": ""
+    }
+  },
+  "contact": {
+    "h2": "Say Hi!",
+    "h3": "Want to discuss a new project?",
+    "p": "Say hello! let's discuss your ideas and make it happen",
+    "privacyPolicy": {
+      "p1": "I've read the",
+      "a": "privacy policy",
+      "p2": "and agree to the processing of my data as outlined."
+    },
+    "button": "Send Message"
+  },
+  "privacyPolicy": {
+    "h1": "Privacy Policy",
+    "introduction1": "In the following data protection declaration we inform you about the most important aspects of data processing on our website. We collect and process personal data only on the basis of legal provisions (General Data Protection Regulation, Telecommunications Act 2003).",
+    "introduction2": "As soon as you, as a user, access or visit our website, your IP address, as well as the start and end of the session, will be recorded. This is technically necessary and therefore constitutes a legitimate interest in accordance with Art. 6 para. 1 lit. f GDPR.",
+    "contact": {
+      "h2Contact": "Contact with us",
+      "contactDescription": "If you contact us either via our contact form on our website or by email, the data you provide will be stored with us for six months for the purpose of processing your request or in case of follow-up questions. Your transmitted data will not be shared without your consent."
+    },
+    "cookies": {
+      "h2Cookies": "Cookies",
+      "cookiesDescription": "Our website uses so-called cookies. These are small text files that are stored on your device with the help of the browser. They do not cause any damage. We use cookies to make our website more user-friendly. Some cookies remain stored on your device until you delete them. They allow us to recognize your browser during your next visit. If you do not want this, you can configure your browser to inform you about the setting of cookies and only allow them in individual cases. Disabling cookies may limit the functionality of our website."
+    },
+    "serverLogFiles": {
+      "h2LogFiles": "Server-Log Files",
+      "LogFilesDescription": "This website and the associated provider automatically collect information during the use of the website in the form of so-called \"server log files.\" This specifically includes:",
+      "list": {
+        "li1": "IP address or hostname",
+        "li2": "the browser used",
+        "li3": "Length of stay on the website as well as date and time",
+        "li4": "Pages of the website accessed",
+        "li5": "Language settings and operating system",
+        "li6": "\"Leaving page\" (on which URL did the user leave the website)",
+        "li7": "ISP (Internet Service Provider)"
+      },
+      "addition": "This information collected is not processed on a personal basis or associated with personal data.",
+      "addition2": "The website operator reserves the right to evaluate or check this data if illegal activities become known."
+    },
+    "rights": {
+      "h2": "Your rights as a data subject",
+      "rightsDescription": "As a data subject, you generally have the right to:",
+      "list": {
+        "li1": "Information",
+        "li2": "Deletion of data",
+        "li3": "Correction of data",
+        "li4": "Data portability",
+        "li5": "Revocation and objection to data processing",
+        "li6": "Limitation"
+      },
+      "addition": "If you suspect that data protection law violations have occurred in the course of processing your data, you have the opportunity to complain to us (pesendorfer.gerald@hotmail.com) or the data protection authority."
+    },
+    "operatorInformation": {
+      "h2": "You can reach us using the following contact details:",
+      "b1": "Website operator: ",
+      "b2": "Telephone number: ",
+      "b3": "Email: "
+    }
+  },
+  "imprint": {
+    "h1": "Legal Notice",
+    "mainInfo": {
+      "specification": "Information according to § 5 TMG",
+      "name": "Name: ",
+      "address": "Address: ",
+      "represented": "Represented by: "
+    },
+    "contact": {
+      "phone": "Telephone number: "
+    },
+    "disclaimer": {
+      "p1": "Disclaimer:",
+      "p2": "Data protection",
+      "disclaimerDescription": {
+        "p1": "It is generally possible to use our website without providing any personal data. As far as personal data (e.g. name, address or e-mail addresses) is collected on our pages, this is always done on a voluntary basis, as far as possible. This data will not be passed on to third parties without your express consent.",
+        "p2": "We would like to point out that data transmission over the Internet (e.g. when communicating via email) can have security gaps. Complete protection of data from access by third parties is not possible.",
+        "p3": "The use of contact details published as part of the imprint obligation by third parties to send unsolicited advertising and information materials is hereby expressly prohibited. The operators of the pages expressly reserve the right to take legal action in the event of unsolicited advertising information being sent, such as spam emails."
+      }
+    }
   }
 }
