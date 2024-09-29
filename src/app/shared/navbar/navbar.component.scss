@@ -1,6 +1,6 @@
 $boarder-container-height: 170px;
 $boarder-container-width: 580px;
-$font-sice-nav: 96px;
+$font-sice-nav: 80px;
 
 .nav-container {
     width: 100vw;
@@ -29,8 +29,17 @@ $font-sice-nav: 96px;
     }
 }
 
+.menue-container {
+    display: flex;
+    align-items: center;
+
+    >button {
+        width: 40px;
+    }
+}
+
 .navbar-padding-show {
-    padding-right: 12px;
+    padding-right: 10px;
 }
 
 .menu-container {
@@ -262,7 +271,7 @@ nav {
 (max-height: 903px) {
     $boarder-container-height: 97px !important;
     $boarder-container-width: 330px !important;
-    $font-sice-nav: 55px !important;
+    $font-sice-nav: 45px !important;
 
     .border {
         height: $boarder-container-height;
@@ -305,7 +314,7 @@ nav {
 (max-height: 613px) {
     $boarder-container-height: 76px !important;
     $boarder-container-width: 261px !important;
-    $font-sice-nav: 43px !important;
+    $font-sice-nav: 35px !important;
 
     .border {
         height: $boarder-container-height;

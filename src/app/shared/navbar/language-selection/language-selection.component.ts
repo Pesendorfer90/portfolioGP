@@ -1,28 +1,32 @@
 import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+// import { TranslateService } from '@ngx-translate/core';
 import { languages } from '../../config/data';
 import { TranslationService } from '../../../service/translation.service';
 
 @Component({
   selector: 'app-language-selection',
   standalone: true,
-  imports: [],
+  imports: [  ],
   template: `
-    <button (click)="changeLang('en')">English</button>
-    <button (click)="changeLang('de')">Deutsch</button>
+  @if (this.translationService.language == 'de') {
+    <img (click)="changeLang('en')" src="assets/img/language/english.png">
+  } @if (this.translationService.language == 'en') {
+    <img (click)="changeLang('de')" src="assets/img/language/german.png">
+  }
   `,
   styleUrl: './language-selection.component.scss'
 })
 export class LanguageSelectionComponent {
   languages = languages;
+  language = '';
 
-  constructor(private translate: TranslateService,
-    private translationService: TranslationService
-  ) {
-    translate.setDefaultLang('en');
+  constructor(public translationService: TranslationService) {    
+    this.translationService.getLang();
+    this.language = this.translationService.language;
   }
 
   changeLang(lang: string) {
      this.translationService.changeLang(lang);
+     this.translationService.language = lang;
    }
 }

@@ -6,7 +6,8 @@ import { TranslateService } from '@ngx-translate/core';
   providedIn: 'root'
 })
 export class TranslationService {
-  defaultLang = 'de';
+  defaultLang = 'en';
+  language = '';
 
   constructor(
     private translateService: TranslateService,
@@ -28,4 +29,13 @@ export class TranslationService {
       localStorage.setItem('lng', lang);
     }
   }
+
+  getLang() {
+    let storage = localStorage.getItem('lng');
+    if (!storage) {
+      this.language = this.defaultLang
+    } else {      
+      this.language = storage;
+    }
+   }
 }

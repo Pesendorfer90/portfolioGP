@@ -3,7 +3,7 @@
     "link1": "Über mich",
     "link2": "Meine Skills",
     "link3": "Portfolio",
-    "p": "Sag Hallo!"
+    "p": "Sag Hi!"
   },
   "footer": {
     "a": "Impressum"
@@ -32,9 +32,15 @@
     }
   },
   "contact": {
-    "h2": "Sag Hallo!",
+    "h2": "Sag Hi!",
     "h3": "Möchten Sie ein neues Projekt besprechen?",
     "p": "Lassen Sie uns Ihre Ideen besprechen und sie in die Tat umsetzen",
+    "nameInput": "Ihr Name",
+    "emailInput": "Ihre Email",
+    "messageInput": "Ihre Nachricht",
+    "errorName": "Ihr Name ist erforderlich",
+    "errorEmail": "Ihre E-Mail ist erforderlich",
+    "errorMessage": "Ihre Nachricht ist leer",
     "privacyPolicy": {
       "p1": "Ich habe die",
       "a": "Datenschutzerklärung",

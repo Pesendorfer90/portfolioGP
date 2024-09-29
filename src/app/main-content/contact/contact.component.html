@@ -1,4 +1,4 @@
-<div class="contact-container"  id="contactSection">
+<div class="contact-container" id="contactSection">
     <div class="greet-container" #arrowTrigger3>
         <div class="greet">
             <h2 #contact>{{ 'contact.h2' | translate }}</h2>
@@ -13,8 +13,8 @@
                 <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
                     <div class="befor-container" [ngClass]="{'input-focus input-name': nameFocus}">
                         <input #name="ngModel" [(ngModel)]="contactData['name']" class="name" type="text" name="name"
-                            placeholder="Your name" (focus)='nameFocus = true' (focusout)='nameFocus = false'
-                            minlength="4" required>
+                            placeholder="{{ 'contact.nameInput' | translate }}" (focus)='nameFocus = true'
+                            (focusout)='nameFocus = false' minlength="4" required>
                         <div class="status-img-container">
                             <img *ngIf="name.invalid && (name.dirty || name.touched)"
                                 src="./../../assets/img/contact/error.png">
@@ -26,13 +26,14 @@
                             (name.dirty || name.touched)}">
                         <div class="error-message-active" *ngIf="name.invalid &&
                             (name.dirty || name.touched)">
-                            Your name is required
+                            {{ 'contact.errorName' | translate }}
                         </div>
                     </div>
 
                     <div class="befor-container" [ngClass]="{'input-focus input-email': emailFocus}">
-                        <input #email="ngModel" [(ngModel)]="contactData['email']" class="email" type="email" name="email"
-                            placeholder="Your email" (focus)='emailFocus = true' (focusout)='emailFocus = false'
+                        <input #email="ngModel" [(ngModel)]="contactData['email']" class="email" type="email"
+                            name="email" placeholder="{{ 'contact.emailInput' | translate }}"
+                            (focus)='emailFocus = true' (focusout)='emailFocus = false'
                             pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
                         <div class="status-img-container">
                             <img *ngIf="email.invalid && (email.dirty || email.touched)"
@@ -45,15 +46,16 @@
                             (email.dirty || email.touched)}">
                         <div class="error-message-active" *ngIf="email.invalid &&
                             (email.dirty || email.touched)">
-                            Your email is required
+                            {{ 'contact.errorEmail' | translate }}
                         </div>
                     </div>
 
                     <div class="befor-container" [ngClass]="{'input-focus input-message': messageFocus}">
                         <div class="pull-tab"></div>
                         <textarea #message="ngModel" [(ngModel)]="contactData['message']" class="message" type="text"
-                            name="message" placeholder="Your message" (focus)='messageFocus = true'
-                            (focusout)='messageFocus = false' minlength="10" required></textarea>
+                            name="message" placeholder="{{ 'contact.messageInput' | translate }}"
+                            (focus)='messageFocus = true' (focusout)='messageFocus = false' minlength="10"
+                            required></textarea>
                         <div class="status-img-container">
                             <img *ngIf="message.invalid && (message.dirty || message.touched)"
                                 src="./../../assets/img/contact/error.png">
@@ -65,7 +67,7 @@
                                 (message.dirty || message.touched)}">
                         <div class="error-message-active" *ngIf="message.invalid &&
                                 (message.dirty || message.touched)">
-                            Your message is empty
+                            {{ 'contact.errorMessage' | translate }}
                         </div>
                     </div>
 
@@ -79,21 +81,28 @@
                         </div>
 
                         <p class="privacy-policy-text">{{ 'contact.privacyPolicy.p1' | translate }}
-                            <a [ngClass]="{'hovered': isHovered}"  routerLink="/privacy-policy" routerLinkActive="active">
+
+
+                            <!-- Hier weiter!!!!!!!!!!!!!!!!!!!!!!!!!111 -->
+
+                            <a [ngClass]="{'hoveredEn': isHovered && this.translate.language === 'en',
+                            'hoveredDe': isHovered && this.translate.language === 'de'}"
+                                (mouseenter)="isHovered = true" (mouseleave)="isHovered = false"
+                                routerLink="/privacy-policy" routerLinkActive="active">
                                 {{ 'contact.privacyPolicy.a' | translate }}
                             </a>
                             {{ 'contact.privacyPolicy.p2' | translate }}
                         </p>
                     </div>
-                    
+
                     <div class="button-container">
                         <button [ngClass]="{'active': name.valid &&email.valid && message.valid && privatePolicy.valid}"
                             type="submit">{{ 'contact.button' | translate }}</button>
                     </div>
 
                     <div class="arrow-up-container">
-                        <div class="arrow-up" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseOut()" (click)="scrollToArea('headerUp')"
-                            [routerLink]="['/']" fragment="headerUp">
+                        <div class="arrow-up" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseOut()"
+                            (click)="scrollToArea('headerUp')" [routerLink]="['/']" fragment="headerUp">
 
                             <div class="line"
                                 [ngClass]="{'hover-up-line': linkAnimationStates['arrowUp'].enter, 'reset-down-line': linkAnimationStates['arrowUp'].leave}">

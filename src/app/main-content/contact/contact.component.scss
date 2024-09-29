@@ -239,12 +239,17 @@
         text-decoration: none;
         color: #00BC8F;
         padding: 0 6px;
-
-        &:hover {
-            font-weight: 800;
-            padding: 0 2.8px;
-        }
     }
+}
+
+.hoveredEn {
+    font-weight: 800 !important;
+    padding: 0 2.8px !important;
+}
+
+.hoveredDe {
+    font-weight: 800 !important;
+    padding: 0 1px !important;
 }
 
 .button-container {
@@ -339,11 +344,6 @@
 
 .reset-down-line-vertival {
     animation: hover-vertival-inaktiv 0.2s ease-in-out forwards;
-}
-
-.hovered {
-    font-weight: 800 !important;
-    padding: 0 2.8px !important;
 }
 
 .input-focus::after {
@@ -450,6 +450,12 @@
 @media (max-width: 1024px) {
     .contact-container {
         clip-path: polygon(0% 0%, 100% 10%, 100% 100%, 0% 100%);
+    }
+
+    .greet {
+        h2 {
+            font-size: 60px;
+        }
     }
 }
 

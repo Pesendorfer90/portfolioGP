@@ -3,12 +3,12 @@
         <button [routerLink]="['/']" (click)="scrollToArea('headerUp')">
             <img src="assets/img/logo.png">
         </button>
-        <div>
+        <div class="menue-container">
             <app-language-selection></app-language-selection>
+            <button (click)="navMenu()">
+                <img src="assets/img/burger/Property{{ burgerIndex }}.png">
+            </button>
         </div>
-        <button (click)="navMenu()">
-            <img src="assets/img/burger/Property{{ burgerIndex }}.png">
-        </button>
     </div>
 
     <div [ngClass]="{ 'show-menu': this.menu, 'hide-menu': !this.menu }" class="menu-container">

@@ -44,7 +44,7 @@ export class ContactComponent {
   constructor(private scrollToService: ScrollToService,
     public visibilityCheckService: VisibilityCheckService,
     private toastr:ToastrService,
-    public translate: TranslationService
+    public translate: TranslationService,
   ) {
     this.linkAnimationStates['arrowUp'] = {
       enter: false,
@@ -93,9 +93,7 @@ export class ContactComponent {
             console.error(error);
           },
           complete: () => {
-            console.info('send post complete');
             this.toastr.success('Message sent.');
-            // Hier eine sendebestätigung einfügen
           }
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {

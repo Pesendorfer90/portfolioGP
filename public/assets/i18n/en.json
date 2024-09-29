@@ -35,6 +35,12 @@
     "h2": "Say Hi!",
     "h3": "Want to discuss a new project?",
     "p": "Let's discuss your ideas and make it happen",
+    "nameInput": "Your name",
+    "emailInput": "Your email",
+    "messageInput": "Your message",
+    "errorName": "Your name is required",
+    "errorEmail": "Your email is required",
+    "errorMessage": "Your message is empty",
     "privacyPolicy": {
       "p1": "I've read the",
       "a": "privacy policy",

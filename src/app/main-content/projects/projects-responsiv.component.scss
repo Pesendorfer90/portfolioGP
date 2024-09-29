@@ -8,32 +8,6 @@
 @media (max-width: 1350px) {
   $containerWidth: 720px;
 
-  .portfolio-header {
-
-    h2 {
-      animation: pulse 3s infinite ease-in-out;
-    }
-  }
-
-  @keyframes pulse {
-    10% {
-      color: black;
-    }
-
-    25% {
-      color: #00BC8F;
-    }
-
-    75% {
-      color: #00BC8F;
-    }
-
-    90% {
-      color: black;
-    }
-  }
-
-
   .project-base {
     flex-direction: column;
     width: $containerWidth;
@@ -154,6 +128,30 @@
 @media (max-width: 1024px) {
   $containerWidth: 688px;
 
+  .portfolio-header {
+    h2 {
+      animation: pulse 3s infinite ease-in-out;
+    }
+  }
+
+  @keyframes pulse {
+    10% {
+      color: black;
+    }
+
+    25% {
+      color: #00BC8F;
+    }
+
+    75% {
+      color: #00BC8F;
+    }
+
+    90% {
+      color: black;
+    }
+  }
+
   .project-base {
     width: $containerWidth;
   }
@@ -162,6 +160,12 @@
 
 @media (max-width: 850px) {
   $containerWidth: 576px;
+
+  .portfolio-header {
+    h2 {
+      font-size: 60px;
+    }
+  }
 
   .project-base {
     width: $containerWidth;
@@ -325,8 +329,8 @@
   }
 
   .pointer-base {
-    top: calc( 50% + 12px );
-    }
+    top: calc(50% + 12px);
+  }
 
   .pointer {
     right: -16px;
