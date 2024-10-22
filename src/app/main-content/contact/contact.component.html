@@ -34,7 +34,7 @@
                         <input #email="ngModel" [(ngModel)]="contactData['email']" class="email" type="email"
                             name="email" placeholder="{{ 'contact.emailInput' | translate }}"
                             (focus)='emailFocus = true' (focusout)='emailFocus = false'
-                            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
+                            pattern="[a-zA-Z0-9._+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
                         <div class="status-img-container">
                             <img *ngIf="email.invalid && (email.dirty || email.touched)"
                                 src="./../../assets/img/contact/error.png">
