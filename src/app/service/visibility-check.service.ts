@@ -17,7 +17,7 @@ export class VisibilityCheckService {
   isScrolledIntoView(div: ElementRef<HTMLElement>): boolean {
     if (div) {
       const rect = div.nativeElement.getBoundingClientRect();
-      const bottomShown = rect.bottom <= window.innerHeight && rect.bottom >= 0;
+      const bottomShown = rect.bottom + 100 <= window.innerHeight && rect.bottom >= 0;
       return bottomShown;
     } else {
       return false;

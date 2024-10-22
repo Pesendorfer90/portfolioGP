@@ -19,10 +19,10 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     importProvidersFrom(FormsModule),
     provideHttpClient(),
-    importProvidersFrom(BrowserAnimationsModule), // Notwendig für ngx-toastr
+    importProvidersFrom(BrowserAnimationsModule), // ngx-toastr
     importProvidersFrom(ToastrModule.forRoot({
-      timeOut: 10000, // 10 Sekunden Timeout für alle Toasts
-      positionClass: 'toast-bottom-center', // Positionierung nach Wunsch
+      timeOut: 10000, // 10 sec Timeout for all Toasts
+      positionClass: 'toast-bottom-center', // Position
       preventDuplicates: true,
     })),
     importProvidersFrom(TranslateModule.forRoot({

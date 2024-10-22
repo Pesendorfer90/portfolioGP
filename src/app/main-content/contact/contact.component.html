@@ -1,7 +1,7 @@
-<div class="contact-container" id="contactSection">
+<div class="contact-container">
     <div class="greet-container" #arrowTrigger3>
         <div class="greet">
-            <h2 #contact>{{ 'contact.h2' | translate }}</h2>
+            <h2 #contact id="contactSection">{{ 'contact.h2' | translate }}</h2>
         </div>
     </div>
     <div class="contact-main-container">
@@ -81,14 +81,10 @@
                         </div>
 
                         <p class="privacy-policy-text">{{ 'contact.privacyPolicy.p1' | translate }}
-
-
-                            <!-- Hier weiter!!!!!!!!!!!!!!!!!!!!!!!!!111 -->
-
                             <a [ngClass]="{'hoveredEn': isHovered && this.translate.language === 'en',
                             'hoveredDe': isHovered && this.translate.language === 'de'}"
                                 (mouseenter)="isHovered = true" (mouseleave)="isHovered = false"
-                                routerLink="/privacy-policy" routerLinkActive="active">
+                                [routerLink]="['/privacy-policy']">
                                 {{ 'contact.privacyPolicy.a' | translate }}
                             </a>
                             {{ 'contact.privacyPolicy.p2' | translate }}
@@ -101,8 +97,7 @@
                     </div>
 
                     <div class="arrow-up-container">
-                        <div class="arrow-up" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseOut()"
-                            (click)="scrollToArea('headerUp')" [routerLink]="['/']" fragment="headerUp">
+                        <div class="arrow-up" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseOut()" [routerLink]="['/']" fragment="headerUp">
 
                             <div class="line"
                                 [ngClass]="{'hover-up-line': linkAnimationStates['arrowUp'].enter, 'reset-down-line': linkAnimationStates['arrowUp'].leave}">

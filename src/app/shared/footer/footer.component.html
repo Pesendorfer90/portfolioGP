@@ -11,7 +11,7 @@
                         (mouseleave)="onMouseOut('link1')" (touchend)="onMouseOut('link1')" (touchcancel)="onMouseOut('link1')"
                         [ngClass]="{'hover-link': linkAnimationStates['link1'].enter, 'reset-link': linkAnimationStates['link1'].leave}">
                 </a>
-                <a class="link2" (click)="scrollToArea('contactSection')">
+                <a class="link2" routerLink="/" fragment="contactSection">
                     <img src="assets/img/sozials/email.png" id="link2" (mouseenter)="onMouseEnter('link2')"
                         (mouseleave)="onMouseOut('link2')" (touchend)="onMouseOut('link2')" (touchcancel)="onMouseOut('link2')"
                         [ngClass]="{'hover-link': linkAnimationStates['link2'].enter, 'reset-link': linkAnimationStates['link2'].leave}">
@@ -24,13 +24,13 @@
             </div>
             <div class="legal-notice">
                 <div>
-                    <a routerLink="/legal-notice" routerLinkActive="active">{{ 'footer.a' | translate }}</a>
+                    <a routerLink="/legal-notice">{{ 'footer.a' | translate }}</a>
                 </div>
             </div>
         </div>
         <div class="legal-notice-responsiv">
             <div>
-                <a routerLink="/legal-notice" routerLinkActive="active">{{ 'footer.a' | translate }}</a>
+                <a routerLink="/legal-notice">{{ 'footer.a' | translate }}</a>
             </div>
         </div>
     </div>

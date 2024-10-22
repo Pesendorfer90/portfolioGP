@@ -59,10 +59,16 @@ a {
 
 @media(max-width: 690px) {
     h1 {
-        font-size: 45px;
+        font-size: 35px;
     }
 }
 
+
+@media(max-width: 510px) {
+    h1 {
+        font-size: 30px;
+    }
+}
 
 @media(max-width: 400px) {
     .impressum {
@@ -77,6 +83,6 @@ a {
     }
 
     h1 {
-        font-size: 35px;
+        font-size: 23px;
     }
 }

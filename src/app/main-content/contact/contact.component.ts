@@ -3,7 +3,6 @@ import { Component, ElementRef, EventEmitter, HostListener, inject, Output, View
 import { FormsModule, NgForm } from '@angular/forms';
 import { AnimationStates } from '../../models/animation-states'
 import { RouterModule } from '@angular/router';
-import { ScrollToService } from '../../service/scroll-to.service';
 import { HttpClient } from '@angular/common/http';
 import { VisibilityCheckService } from '../../service/visibility-check.service';
 import { MessageInfos } from '../../models/message-infos';
@@ -41,8 +40,7 @@ export class ContactComponent {
    * 
    * The constructor initializes the animation state for the 'arrowUp' link with default values.
    */
-  constructor(private scrollToService: ScrollToService,
-    public visibilityCheckService: VisibilityCheckService,
+  constructor(public visibilityCheckService: VisibilityCheckService,
     private toastr:ToastrService,
     public translate: TranslationService,
   ) {
@@ -121,15 +119,6 @@ export class ContactComponent {
    */
   onMouseOut() {
     this.linkAnimationStates['arrowUp'] = { enter: false, leave: true, down: false };
-  }
-
-  /**
-   * This method triggers the scrolling to a specific element identified by the given link.
-   *
-   * @param {string} link - The identifier (e.g., ID or selector) of the element to scroll to.
-   */
-  scrollToArea(link: string) {
-    this.scrollToService.scrollToElement(link);
   }
 
   /** 

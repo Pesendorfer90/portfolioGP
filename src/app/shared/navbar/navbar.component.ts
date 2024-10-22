@@ -2,8 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, AfterViewInit } from '@angular/core';
 import { AnimationStates } from '../../models/animation-states'
 import { ScrollbarService } from '../../service/scrollbar.service';
-import { ScrollToService } from '../../service/scroll-to.service';
-import { NavigationEnd, Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { LanguageSelectionComponent } from "./language-selection/language-selection.component";
 import { TranslationService } from '../../service/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
@@ -25,8 +24,6 @@ export class NavbarComponent implements AfterViewInit {
 
   constructor(
     public scrollbarService: ScrollbarService,
-    private scrollToService: ScrollToService,
-    private router: Router,
     public translate: TranslationService) {
     this.initializeLinks(this.linkNames);
   }
@@ -56,38 +53,6 @@ export class NavbarComponent implements AfterViewInit {
         leave: false,
         down: false
       };
-    });
-  }
-
-  /**
-   * This method checks if the provided link corresponds to a valid section identifier (e.g., "aboutMe", "mySkills", "portfolio", "contactSection", "headerUp").
-   * If the link is valid and the `menu` property is true, the navigation menu will be toggled using `navMenu()`. 
-   * Finally, it uses the `scrollToService` to scroll smoothly to the specified section.
-   *
-   * @param {string} link - The identifier of the section to scroll to.
-   */
-  scrollToArea(link: string) {
-    if (["aboutMe", "mySkills", "portfolio", "contactSection", "headerUp"].includes(link)) {
-      if (this.menu) {
-        this.navMenu();
-      }
-    }
-    this.scrollToService.scrollToElement(link);
-  }
-
-  /** 
-   * This method sets up a subscription to the router's events and listens for the `NavigationEnd` event. 
-   * When a navigation event ends, it checks the current URL for a fragment (anchor). If a fragment is found,
-   * it uses the `scrollToService` to scroll to the corresponding element on the page.
-   */
-  ngOnInit() {
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        const tree = this.router.parseUrl(this.router.url);
-        if (tree.fragment) {
-          this.scrollToService.scrollToElement(tree.fragment);
-        }
-      }
     });
   }
 
@@ -176,5 +141,17 @@ export class NavbarComponent implements AfterViewInit {
    */
   onMouseOut(linkId: string) {
     this.linkAnimationStates[linkId] = { enter: false, leave: true, down: false };
+  }
+
+  /**
+   * Checks if the menu is present and triggers the navigation menu action if it exists.
+   *
+   * This function checks whether the `menu` property is defined (`true`). If the menu exists,
+   * it calls the `navMenu()` function to perform the related navigation menu actions.
+   */
+  checkMenu() {
+    if (this.menu) {
+      this.navMenu()
+    }
   }
 }

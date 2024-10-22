@@ -1,6 +1,6 @@
 <div class="nav-container">
     <div class="top-bar" [ngClass]="{ 'navbar-padding-show': this.scrollbarService.scrollBarStatus }">
-        <button [routerLink]="['/']" (click)="scrollToArea('headerUp')">
+        <button [routerLink]="['/']" fragment="headerUp" (click)="this.checkMenu()">
             <img src="assets/img/logo.png">
         </button>
         <div class="menue-container">
@@ -13,16 +13,13 @@
 
     <div [ngClass]="{ 'show-menu': this.menu, 'hide-menu': !this.menu }" class="menu-container">
         <nav #nav>
-            <div id="aboutMeLink" class="border" [routerLink]="['/']" fragment="aboutMe"
-                (click)="scrollToArea('aboutMe')">
+            <div id="aboutMeLink" class="border" [routerLink]="['/']" fragment="aboutMe" (click)="navMenu()">
                 <a>{{ 'nav.link1' | translate }}</a>
             </div>
-            <div id="mySkillsLink" class="border" [routerLink]="['/']" fragment="mySkills"
-            (click)="scrollToArea('mySkills')">
+            <div id="mySkillsLink" class="border" [routerLink]="['/']" fragment="mySkills" (click)="navMenu()">
                 <a>{{ 'nav.link2' | translate }}</a>
             </div>
-            <div id="portfolioLink" class="border" [routerLink]="['/']" fragment="portfolio"
-            (click)="scrollToArea('portfolio')">
+            <div id="portfolioLink" class="border" [routerLink]="['/']" fragment="portfolio" (click)="navMenu()">
                 <a>{{ 'nav.link3' | translate }}</a>
             </div>
         </nav>
@@ -39,7 +36,7 @@
                             (touchcancel)="onMouseOut('link1')"
                             [ngClass]="{'hover-link': linkAnimationStates['link1'].enter, 'reset-link': linkAnimationStates['link1'].leave}">
                     </a>
-                    <a class="link2" (click)="scrollToArea('contactSection')" [routerLink]="['/']">
+                    <a class="link2" [routerLink]="['/']" fragment="contactSection" (click)="navMenu()">
                         <img src="assets/img/sozials/email.png" id="link2" (mouseenter)="onMouseEnter('link2')"
                             (mouseleave)="onMouseOut('link2')" (touchend)="onMouseOut('link2')"
                             (touchcancel)="onMouseOut('link2')"

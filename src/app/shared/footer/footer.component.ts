@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { AnimationStates } from '../../models/animation-states'
 import { ScrollbarService } from '../../service/scrollbar.service';
-import { ScrollToService } from '../../service/scroll-to.service';
 import { RouterModule } from '@angular/router';
 import { TranslationService } from '../../service/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
@@ -20,7 +19,6 @@ export class FooterComponent {
 
   constructor(
     public scrollbarService: ScrollbarService,
-    private scrollToService: ScrollToService,
     public translate: TranslationService) {
     this.initializeLinks(this.linkNames);
   }
@@ -63,16 +61,5 @@ export class FooterComponent {
    */
   onMouseOut(linkId: string) {
     this.linkAnimationStates[linkId] = { enter: false, leave: true, down: false };
-  }
-
-  /**
-   * This method checks if the provided link corresponds to a valid section identifier (e.g., "aboutMe", "mySkills", "portfolio", "contactSection", "headerUp").
-   * If the link is valid and the `menu` property is true, the navigation menu will be toggled using `navMenu()`. 
-   * Finally, it uses the `scrollToService` to scroll smoothly to the specified section.
-   *
-   * @param {string} link - The identifier of the section to scroll to.
-   */
-  scrollToArea(link: string) {
-    this.scrollToService.scrollToElement(link);
   }
 }
