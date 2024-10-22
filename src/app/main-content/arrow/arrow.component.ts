@@ -11,5 +11,5 @@ export class ArrowComponent {
   @Input() arrowTriggerSkill: boolean = false;
   @Input() arrowTriggerProject: boolean = false;
   @Input() arrowTriggerContact: boolean = false;
-  @Input() position: string = 'right';
+  @Input() position: string = 'right' || 'left';
 }

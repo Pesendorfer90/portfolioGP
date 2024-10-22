@@ -1,19 +1,20 @@
 <div id="portfolio" class="portfolio-container">
     <div class="portfolio-header">
         <h2 #project>Portfolio</h2>
-        <p #arrowTrigger2>This page is a sample of my work - please feel free to try them out.</p>
+        <p #arrowTrigger2>{{ 'portfolio.description' | translate }}</p>
     </div>
     <div class="portfolio-list">
         <div *ngFor="let item of items; let i = index" id="project{{ i + 1 }}" [class.project]="i % 2 === 0 "
-            [class.project-reverse]="i % 2 === 1">
+            [class.project-reverse]="i % 2 === 1" [class.project-base-touch]="isTouchDevice && projectVisibility[i]">
             <div id="countResponsiv" [class.count]="i % 2 === 0" [class.count-reverse]="i % 2 === 1">
                 0{{ i + 1 }}/0{{ items.length }}
             </div>
-            <a [class.image]="i % 2 === 0" [class.image-reverse]="i % 2 === 1" [href]="item.projectLink"
-                target="_blank">
-                <img class="preview-img" [src]="item.image" alt="Bild {{ i + 1 }}">
-                <img #previewImg [class.pointer]="i % 2 === 0" [class.pointer-reverse]="i % 2 === 1"
-                    src="assets/img/projects/pointer.png" alt="">
+            <a [class.image]="i % 2 === 0" [class.image-reverse]="i % 2 === 1">
+                <img #imageTrigger class="preview-img" [src]="item.image" alt="Bild {{ i + 1 }}">
+                <img [class.pointer]="i % 2 === 0" [class.pointer-reverse]="i % 2 === 1"
+                    [class.pointer-touch]="isTouchDevice && projectVisibility[i] && i % 2 === 0"
+                    [class.pointer-reverse-touch]="isTouchDevice && projectVisibility[i] && i % 2 === 1"
+                    src="assets/img/projects/pointer.png">
             </a>
             <div [class.text]="i % 2 === 0" [class.text-reverse]="i % 2 === 1">
                 <div id="count" [class.count]="i % 2 === 0" [class.count-reverse]="i % 2 === 1">
@@ -22,42 +23,19 @@
                 <div [class.description]="i % 2 === 0" [class.description-reverse]="i % 2 === 1">
                     <h3>{{ item.name }}</h3>
                     <span>{{ item.techStack }}</span>
-                    <p>{{ item.description }}</p>
-                    <a href="{{ item.gitLink }}" target="_blank" class="github-link">
-                        Github
-                    </a>
+                    <p>{{ 'portfolio.projects.' + (i + 1) | translate }}</p>
+                    <div [class.project-link]="i % 2 === 0" [class.project-link-reverse]="i % 2 === 1">
+                        <a [href]="item.gitLink" target="_blank" class="github-link" [class.github-link]="i % 2 === 0"
+                            [class.github-link-reverse]="i % 2 === 1">
+                            Github
+                        </a>
+                        <a [href]="item.projectLink" target="_blank" class="github-link"
+                            [class.github-link]="i % 2 === 0" [class.github-link-reverse]="i % 2 === 1">
+                            Live Test
+                        </a>
+                    </div>
                 </div>
-                <div id="test" #test>asdasd</div>
             </div>
         </div>
     </div>
-    <!-- <div #test></div> -->
-    <!-- <div class="portfolio-list">
-        <div *ngFor="let item of items; let i = index" id="project{{ i + 1 }}" [class.project]="i % 2 === 0 "
-            [class.project-reverse]="i % 2 === 1" [appIntersectionObserver]="{ identifier: 'project' + (i + 1) }"
-            (visibilityChanged)="onVisibilityChanged($event)">
-            <div id="countResponsiv" [class.count]="i % 2 === 0" [class.count-reverse]="i % 2 === 1">
-                0{{ i + 1 }}/0{{ items.length }}
-            </div>
-            <a [class.image]="i % 2 === 0" [class.image-reverse]="i % 2 === 1" [href]="item.projectLink"
-                target="_blank">
-                <img class="preview-img" [src]="item.image" alt="Bild {{ i + 1 }}">
-                <img [class.pointer]="i % 2 === 0" [class.pointer-reverse]="i % 2 === 1"
-                    src="./assets/img/portfolio-img/pointer.png" alt="">
-            </a>
-            <div [class.text]="i % 2 === 0" [class.text-reverse]="i % 2 === 1">
-                <div id="count" [class.count]="i % 2 === 0" [class.count-reverse]="i % 2 === 1">
-                    0{{ i + 1 }}/0{{ items.length }}
-                </div>
-                <div [class.description]="i % 2 === 0" [class.description-reverse]="i % 2 === 1">
-                    <h3>{{ item.name }}</h3>
-                    <span>{{ item.techStack }}</span>
-                    <p>{{ item.description }}</p>
-                    <a href="{{ item.gitLink }}" target="_blank" class="github-link">
-                        Github
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div> -->
 </div>

@@ -1,46 +1,72 @@
-// .project-base {
-//     display: flex;
-//     align-items: center;
-//     max-width: 1440px;
-//     height: 500px;
-//     margin-bottom: 70px;
+.project-base-touch {
+    .pointer-base {
+        height: 75px;
+        width: 75px;
+        opacity: 1 !important;
+    }
 
-//     .pointer-base {
-//         height: 75px !important;
-//         width: 75px !important;
-//         opacity: 1 !important;
-//     }
+    .image .preview-img,
+    .image-reverse .preview-img {
+        filter: grayscale(0) !important;
+    }
 
-//     .image .preview-img,
-//     .image-reverse .preview-img {
-//         filter: grayscale(0) !important;
-//     }
+    .image::before,
+    .image-reverse::before {
+        opacity: 1;
+    }
 
-//     .image::before,
-//     .image-reverse::before {
-//         opacity: 1;
-//     }
+    .description,
+    .description-reverse {
+        transform: translate(0%) !important;
+        opacity: 1;
+    }
 
-//     .description,
-//     .description-reverse {
-//         transform: translate(0%) !important;
-//     }
-// }
+    .github-link-reverse {
+        transform: translate(0%) !important;
+      }
+}
 
-// .project {
-//     @extend .project-base;
-//     flex-direction: row;
+.pointer-touch {
+    transition: all 0.19s ease-in-out;
+    transform: translate(+50%, -50%) rotate(0deg) !important;
+}
 
-//     .pointer {
-//         transform: translate(+50%, -50%) rotate(0deg) !important;
-//     }
-// }
+.pointer-reverse-touch {
+    transition: all 0.19s ease-in-out;
+    transform: translate(-50%, -50%) rotate(270deg) !important;
+}
 
-// .project-reverse {
-//     @extend .project-base;
-//     flex-direction: row-reverse;
 
-//     .pointer-reverse {
-//         transform: translate(-50%, -50%) rotate(270deg) !important;
-//     }
-// }
+@media (max-width: 850px) {
+    .project-base-touch {
+        .description-base {
+            opacity: 1;
+        }
+    }
+
+    .pointer-touch,
+    .pointer-reverse-touch {
+        height: 58px !important;
+        width: 58px !important;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .pointer-touch,
+    .pointer-reverse-touch {
+        height: 48px !important;
+        width: 48px !important;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .pointer-touch,
+    .pointer-reverse-touch {
+        height: 38px !important;
+        width: 38px !important;
+    }
+}

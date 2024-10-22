@@ -10,17 +10,14 @@
         </header>
 
         <div class="basic-information">
-            <p class="email" [routerLink]="['/']" 
-         (click)="scrollToArea('contactSection')">pesendorfer.gerald&#64;hotmail.com</p>
-
-
-            <div class="info-right" [routerLink]="['/']" fragment="aboutMe"
-            (click)="scrollToArea('aboutMe')">
+            <p class="email" [routerLink]="['/']" fragment="contactSection">
+                pesendorfer.gerald&#64;hotmail.com</p>
+            <div class="info-right" [routerLink]="['/']" fragment="aboutMe">
                 <div class="animation-container">
                     <img src="assets\img\arrow.png">
                 </div>
-                <p>Scroll<br>
-                    Down</p>
+                <p>{{ 'landingPage.arrowText1' | translate }}<br>
+                    {{ 'landingPage.arrowText2' | translate }}</p>
             </div>
         </div>
     </main>

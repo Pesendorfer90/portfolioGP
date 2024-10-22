@@ -1,19 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ScrollToService } from '../../service/scroll-to.service';
+import { TranslationService } from '../../service/translation.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about-me',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, TranslateModule],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.scss'
 })
 export class AboutMeComponent {
-  
-  constructor(private scrollToService: ScrollToService) { }
-
-  scrollToArea(link: string) {
-    this.scrollToService.scrollToElement(link);
-  }
+  constructor(public translate: TranslationService) { }
 }

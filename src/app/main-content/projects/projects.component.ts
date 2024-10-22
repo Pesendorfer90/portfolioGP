@@ -1,16 +1,18 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, EventEmitter, HostListener, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, OnInit, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { VisibilityCheckService } from '../../service/visibility-check.service';
 import { TouchDetectionService } from '../../service/touch-detection.service';
+import { TranslationService } from '../../service/translation.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [ CommonModule ],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit {
   items = [
     {
       image: './assets/img/projects/epl.png',
@@ -25,7 +27,7 @@ export class ProjectsComponent {
       name: 'Join',
       techStack: 'Angular | TypeScript | HTML | CSS | Firebase',
       description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
-      gitLink: 'https://github.com/Pesendorfer90/join',
+      gitLink: 'https://github.com/Pesendorfer90/Join-v1.1',
       projectLink: 'http://gerald-pesendorfer.at/join/login.html'
     },
     {
@@ -35,71 +37,61 @@ export class ProjectsComponent {
       description: 'Based on the PokéAPI a simple library that provides and catalogues pokemon information.',
       gitLink: 'https://github.com/Pesendorfer90/Pokedex',
       projectLink: 'http://gerald-pesendorfer.at/Pokedex/index.html'
-    },
-    {
-      image: './assets/img/projects/under-construction.jpg',
-      name: '',
-      techStack: '',
-      description: '',
-      gitLink: '',
-      projectLink: ''
-    },
-    {
-      image: './assets/img/projects/under-construction.jpg',
-      name: '',
-      techStack: '',
-      description: '',
-      gitLink: '',
-      projectLink: ''
     }
   ];
+
 
   @ViewChild('project', { static: false })
   monitoredDiv?: ElementRef<HTMLDivElement>;
   @Output() projectElement = new EventEmitter<boolean>();
 
-  @ViewChildren('test') images!: QueryList<ElementRef>;
-  monitoredImg1?: ElementRef<HTMLDivElement>;
-  @Output() img1 = new EventEmitter<boolean>();
+  @ViewChildren('imageTrigger') projects!: QueryList<ElementRef>;
+
+  projectVisibility: boolean[] = [];
+  projectEvents: EventEmitter<boolean>[] = [];
+
+  isTouchDevice: boolean = false;
 
 
-  // @ViewChild('test', { static: false })
-  // monitoredImg1?: ElementRef<ElementRef>;
-  // @Output() img1 = new EventEmitter<boolean>();
+  constructor(public visibilityCheckService: VisibilityCheckService,
+    private touchDetectionService: TouchDetectionService,
+    public translate: TranslationService
+  ) { }
 
-  // @ViewChild('project2', { static: false })
-  // monitoredImg2?: ElementRef<HTMLDivElement>;
-  // @Output() img2 = new EventEmitter<boolean>();
+  /** 
+   * This method sets up initial project events, visibility states, and detects if the device is a touch device.
+   * - Initializes an array of EventEmitters for project visibility.
+   * - Sets the initial project visibility to false for all projects.
+   * - Detects if the current device is a touch device.
+   */
+  ngOnInit() {
+    this.projectEvents = Array(5).fill(null).map(() => new EventEmitter<boolean>());
+    this.projectVisibility = Array(5).fill(false);
+    this.isTouchDevice = this.touchDetectionService.isTouchDevice();
+  }
 
-  // @ViewChild('project3', { static: false })
-  // monitoredImg3?: ElementRef<HTMLDivElement>;
-  // @Output() img3 = new EventEmitter<boolean>();
-  
-  // @ViewChild('project4', { static: false })
-  // monitoredImg4?: ElementRef<HTMLDivElement>;
-  // @Output() img4 = new EventEmitter<boolean>();
-  
-  // @ViewChild('project5', { static: false })
-  // monitoredImg5?: ElementRef<HTMLDivElement>;
-  // @Output() img5 = new EventEmitter<boolean>();
-
-  // monitoringList: string[] = ["this.project", "this.monitoredImg1", "this.monitoredImg2", "this.monitoredImg3", "this.monitoredImg4", "this.monitoredImg5"]
-
-
-  constructor(public visibilityCheckService: VisibilityCheckService) { }
-
+  /** 
+   * Checks and emits the visibility status of the monitored element and project elements.
+   * This method evaluates whether the monitored element and each project are scrolled into view,
+   * then emits the visibility status for each. It also updates the internal project visibility state.
+   * 
+   * @HostListener scroll - Listens to the window scroll event.
+   * @HostListener resize - Listens to the window resize event.
+   */
   @HostListener('window:scroll', ['$event'])
   @HostListener('window:resize', ['$event'])
-
   onWindowChange() {
-    this.projectElement.emit(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv))
-    // console.log(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv));
+    this.projectElement.emit(this.visibilityCheckService.isScrolledIntoView(this.monitoredDiv!));
 
-    this.images.forEach((img, index) => {
-      // console.log('Image:', img.nativeElement.getBoundingClientRect(), 'Index:', index + 1);
-      this.img1.emit(this.visibilityCheckService.isScrolledIntoView(img));
-      console.log(this.img1.emit(this.visibilityCheckService.isScrolledIntoView(img)));
-      console.log(img, index);
+    this.projects.forEach((id, index) => {
+      const visible = this.visibilityCheckService.isScrolledIntoView(id);
+      if (this.projectEvents[index]) {
+        this.projectEvents[index].emit(visible);
+        this.projectEvents[index].subscribe((visible: boolean) => {
+          this.projectVisibility[index] = visible;
+        });
+      }
     });
   }
+
 }

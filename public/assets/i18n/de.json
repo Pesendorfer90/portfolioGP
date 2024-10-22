@@ -1,0 +1,120 @@
+{
+  "nav": {
+    "link1": "Über mich",
+    "link2": "Meine Skills",
+    "link3": "Portfolio",
+    "p": "Sag Hi!"
+  },
+  "footer": {
+    "a": "Impressum"
+  },
+  "landingPage": {
+    "arrowText1": "Nach unten",
+    "arrowText2": "scrollen"
+  },
+  "aboutMe": {
+    "h2": "Über mich",
+    "description1": "Ich bin ein Frontend-Entwickler mit Sitz in Katzelsdorf, Österreich. Ich helfe Designern und Unternehmen dabei, ihre Ideen in die Realität umzusetzen. Kreativität und logisches Denken sind Fähigkeiten, die ich entwickelt habe, um Ideen in Qualitätsprodukte umzusetzen.",
+    "description2": "Wenn Sie glauben, dass ich gut zu Ihren Projekten passen würde, kontaktieren Sie mich!",
+    "button": "Lass uns reden"
+  },
+  "mySkills": {
+    "h2": "Meine Skills"
+  },
+  "portfolio": {
+    "description": "Diese Seite ist eine Auswahl meiner Arbeiten - probieren Sie sie gerne aus.",
+    "projects": {
+      "1": "Spring-, Lauf- und Wurfspiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen die verrückte Henne zu kämpfen.",
+      "2": "Vom Kanban-System inspirierter Aufgabenmanager. Erstellen und organisieren Sie Aufgaben mithilfe von Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.",
+      "3": "Basierend auf der PokéAPI, einer einfachen Bibliothek, die Pokémon-Informationen bereitstellt und katalogisiert.",
+      "4": "",
+      "5": ""
+    }
+  },
+  "contact": {
+    "h2": "Sag Hi!",
+    "h3": "Möchten Sie ein neues Projekt besprechen?",
+    "p": "Lassen Sie uns Ihre Ideen besprechen und sie in die Tat umsetzen",
+    "nameInput": "Ihr Name",
+    "emailInput": "Ihre Email",
+    "messageInput": "Ihre Nachricht",
+    "errorName": "Ihr Name ist erforderlich",
+    "errorEmail": "Ihre E-Mail ist erforderlich",
+    "errorMessage": "Ihre Nachricht ist leer",
+    "privacyPolicy": {
+      "p1": "Ich habe die",
+      "a": "Datenschutzerklärung",
+      "p2": "gelesen und bin mit der beschriebenen Verarbeitung meiner Daten einverstanden."
+    },
+    "button": "Nachricht senden"
+  },
+  "privacyPolicy": {
+    "h1": "Datenschutzerklärung",
+    "introduction1": "In folgender Datenschutzerklärung informieren wir Sie über die wichtigsten Aspekte der Datenverarbeitung im Rahmen unserer Webseite. Wir erheben und verarbeiten personenbezogene Daten nur auf Grundlage der gesetzlichen Bestimmungen (Datenschutzgrundverordnung, Telekommunikationsgesetz 2003).",
+    "introduction2": "Sobald Sie als Benutzer auf unsere Webseite zugreifen oder diese besuchen wird Ihre IP-Adresse, Beginn sowie Beginn und Ende der Sitzung erfasst. Dies ist technisch bedingt und stellt somit ein berechtigtes Interesse iSv Art 6 Abs 1 lit f DSGVO.",
+    "contact": {
+      "h2": "Kontakt mit uns",
+      "contactDescription": "Wenn Sie uns, entweder über unser Kontaktformular auf unserer Webseite, oder per Email kontaktieren, dann werden die von Ihnen an uns übermittelten Daten zwecks Bearbeitung Ihrer Anfrage oder für den Fall von weiteren Anschlussfragen für sechs Monate bei uns gespeichert. Es erfolgt, ohne Ihre Einwilligung, keine Weitergabe Ihrer übermittelten Daten."
+    },
+    "cookies": {
+      "h2": "Cookies",
+      "cookiesDescription": "Unsere Website verwendet so genannte Cookies. Dabei handelt es sich um kleine Textdateien, die mit Hilfe des Browsers auf Ihrem Endgerät abgelegt werden. Sie richten keinen Schaden an. Wir nutzen Cookies dazu, unser Angebot nutzerfreundlich zu gestalten. Einige Cookies bleiben auf Ihrem Endgerät gespeichert, bis Sie diese löschen. Sie ermöglichen es uns, Ihren Browser beim nächsten Besuch wiederzuerkennen. Wenn Sie dies nicht wünschen, so können Sie Ihren Browser so einrichten, dass er Sie über das Setzen von Cookies informiert und Sie dies nur im Einzelfall erlauben. Bei der Deaktivierung von Cookies kann die Funktionalität unserer Website eingeschränkt sein."
+    },
+    "serverLogFiles": {
+      "h2": "Server-Log Files",
+      "LogFilesDescription": "Diese Webseite und der damit verbundene Provider erhebt im Zuge der Webseitennutzung automatisch Informationen im Rahmen sogenannter „Server-Log Files“. Dies betrifft insbesondere:",
+      "list": {
+        "li1": "IP-Adresse oder Hostname",
+        "li2": "den verwendeten Browser",
+        "li3": "Aufenthaltsdauer auf der Webseite sowie Datum und Uhrzeit",
+        "li4": "aufgerufene Seiten der Webseite",
+        "li5": "Spracheinstellungen und Betriebssystem",
+        "li6": "\"Leaving-Page\" (auf welcher URL hat der Benutzer die Webseite verlassen)",
+        "li7": "ISP (Internet Service Provider)"
+      },
+      "addition": "Diese erhobenen Informationen werden nicht personenbezogen verarbeitet oder mit personenbezogenen Daten in Verbindung gebracht.",
+      "addition2": "Der Webseitenbetreiber behält es sich vor, im Falle von Bekanntwerden rechtswidriger Tätigkeiten, diese Daten auszuwerten oder zu überprüfen."
+    },
+    "rights": {
+      "h2": "Ihre Rechte als Betroffener",
+      "rightsDescription": "Sie als Betroffener haben bezüglich Ihrer Daten, welche bei uns gespeichert sind grundsätzlich ein Recht auf:",
+      "list": {
+        "li1": "Auskunft",
+        "li2": "Löschung der Daten",
+        "li3": "Berichtigung der Daten",
+        "li4": "Übertragbarkeit der Daten",
+        "li5": "Wiederruf und Widerspruch zur Datenverarbeitung",
+        "li6": "Einschränkung"
+      },
+      "addition": "Wenn sie vermuten, dass im Zuge der Verarbeitung Ihrer Daten Verstöße gegen das Datenschutzrecht passiert sind, so haben Sie die Möglichkeit sich bei uns (pesendorfer.gerald@hotmail.com) oder der Datenschutzbehörde zu beschweren."
+    },
+    "operatorInformation": {
+      "h2": "Sie erreichen uns unter folgenden Kontaktdaten:",
+      "b1": "Webseitenbetreiber: ",
+      "b2": "Telefonnummer: ",
+      "b3": "Email: "
+    }
+  },
+  "imprint": {
+    "h1": "Impressum",
+    "mainInfo": {
+      "specification": "Angaben gemäß § 5 TMG",
+      "name": "Name: ",
+      "address": "Addresse: ",
+      "represented": "Vertreten durch: "
+    },
+    "contact": {
+      "h2": "Kontakt",
+      "phone": "Telefonnummer: "
+    },
+    "disclaimer": {
+      "p1": "Haftungsausschluss:",
+      "p2": "Datenschutz",
+      "disclaimerDescription": {
+        "p1": "Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.",
+        "p2": "Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.",
+        "p3": "Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor."
+      }
+    }
+  }
+}

@@ -14,17 +14,17 @@ $marginRightImg: 20px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
 
-    h2 {
-        font-family: Syne;
-        font-size: 78px;
-        font-weight: 800;
-        margin-top: 0px;
+h2 {
+    font-family: Syne;
+    font-size: 78px;
+    font-weight: 800;
+    margin-top: 0px;
 
-        &:hover {
-            transition: color 0.190s ease-in-out;
-            color: #00BC8F;
-        }
+    &:hover {
+        transition: color 0.190s ease-in-out;
+        color: #00BC8F;
     }
 }
 
@@ -105,8 +105,10 @@ $marginRightImg: 20px;
 
 
 @media (max-width: 1645px) {
+    $containerWidth: 1215px;
+
     .introduction-container {
-        width: 1215px;
+        width: $containerWidth;
     }
 }
 
@@ -116,13 +118,13 @@ $marginRightImg: 20px;
 
     .introduction-container {
         align-items: center;
+        width: $containerWidth;
     }
 
     .introduction-info {
         justify-content: unset;
         flex-direction: column;
         align-items: center;
-        width: $containerWidth;
     }
 
     .introduction-text {
@@ -154,9 +156,11 @@ $marginRightImg: 20px;
     }
 
     .introduction-container {
-        h2 {
-            animation: pulse 3s infinite ease-in-out;
-        }
+        width: $containerWidth;
+    }
+
+    h2 {
+        animation: pulse 3s infinite ease-in-out;
     }
 
     @keyframes pulse {
@@ -175,10 +179,6 @@ $marginRightImg: 20px;
         90% {
             color: black;
         }
-    }
-
-    .introduction-info {
-        width: $containerWidth;
     }
 
     .about-img {
@@ -214,8 +214,12 @@ $marginRightImg: 20px;
 @media (max-width: 850px) {
     $containerWidth: 600px;
 
-    .introduction-info {
+    .introduction-container {
         width: $containerWidth;
+    }
+
+    h2 {
+        font-size: 60px;
     }
 
     .about-img {
@@ -229,15 +233,12 @@ $marginRightImg: 20px;
     $containerWidth: 455px;
 
     .introduction-container {
-        h2 {
-            font-size: 45px;
-        }
-    }
-
-    .introduction-info {
         width: $containerWidth;
     }
 
+    h2 {
+        font-size: 45px;
+    }
 
     .about-img {
         margin-top: 10%;
@@ -251,15 +252,12 @@ $marginRightImg: 20px;
     $containerWidth: 370px;
 
     .introduction-container {
-        h2 {
-            font-size: 35px;
-        }
-    }
-
-    .introduction-info {
         width: $containerWidth;
     }
 
+    h2 {
+        font-size: 35px;
+    }
 
     .about-img {
         margin-top: 10%;
@@ -273,15 +271,12 @@ $marginRightImg: 20px;
     $containerWidth: 280px;
 
     .introduction-container {
-        h2 {
-            font-size: 32px;
-        }
-    }
-
-    .introduction-info {
         width: $containerWidth;
     }
 
+    h2 {
+        font-size: 32px;
+    }
 
     .about-img {
         margin-top: 10%;

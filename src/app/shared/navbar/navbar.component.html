@@ -1,53 +1,56 @@
 <div class="nav-container">
     <div class="top-bar" [ngClass]="{ 'navbar-padding-show': this.scrollbarService.scrollBarStatus }">
-        <button [routerLink]="['/']" (click)="scrollToArea('headerUp')">
+        <button [routerLink]="['/']" fragment="headerUp" (click)="this.checkMenu()">
             <img src="assets/img/logo.png">
         </button>
-        <button (click)="navMenu()">
-            <img src="assets/img/burger/Property{{ burgerIndex }}.png">
-        </button>
+        <div class="menue-container">
+            <app-language-selection></app-language-selection>
+            <button (click)="navMenu()">
+                <img src="assets/img/burger/Property{{ burgerIndex }}.png">
+            </button>
+        </div>
     </div>
 
     <div [ngClass]="{ 'show-menu': this.menu, 'hide-menu': !this.menu }" class="menu-container">
         <nav #nav>
-            <div id="aboutMeLink" class="border" [routerLink]="['/']" fragment="aboutMe"
-                (click)="scrollToArea('aboutMe')">>
-                <a>About me</a>
+            <div id="aboutMeLink" class="border" [routerLink]="['/']" fragment="aboutMe" (click)="navMenu()">
+                <a>{{ 'nav.link1' | translate }}</a>
             </div>
-            <div id="mySkillsLink" class="border" [routerLink]="['/']" fragment="mySkills"
-            (click)="scrollToArea('mySkills')">>
-                <a>My skills</a>
+            <div id="mySkillsLink" class="border" [routerLink]="['/']" fragment="mySkills" (click)="navMenu()">
+                <a>{{ 'nav.link2' | translate }}</a>
             </div>
-            <div id="portfolioLink" class="border" [routerLink]="['/']" fragment="portfolio"
-            (click)="scrollToArea('portfolio')">
-                <a>Portfolio</a>
+            <div id="portfolioLink" class="border" [routerLink]="['/']" fragment="portfolio" (click)="navMenu()">
+                <a>{{ 'nav.link3' | translate }}</a>
             </div>
         </nav>
         <div class="menu-footer">
-            <div class="menu-footer-content">
-                <div>
-                    <p>Say Hi!</p>
-                    <a>pesendorfer.gerald&#64;hotmail.com</a>
-                </div>
-                <div class="links">
-                    <a class="link1" href="https://github.com/Pesendorfer90" target="_blank">
-                        <img src="assets/img/sozials/github.png" id="link1" (mouseenter)="onMouseEnter('link1')"
-                            (mouseleave)="onMouseOut('link1')" (touchend)="onMouseOut('link1')"
-                            (touchcancel)="onMouseOut('link1')"
-                            [ngClass]="{'hover-link': linkAnimationStates['link1'].enter, 'reset-link': linkAnimationStates['link1'].leave}">
-                    </a>
-                    <a class="link2" (click)="scrollToArea('contactSection')" [routerLink]="['/']">
-                        <img src="assets/img/sozials/email.png" id="link2" (mouseenter)="onMouseEnter('link2')"
-                            (mouseleave)="onMouseOut('link2')" (touchend)="onMouseOut('link2')"
-                            (touchcancel)="onMouseOut('link2')"
-                            [ngClass]="{'hover-link': linkAnimationStates['link2'].enter, 'reset-link': linkAnimationStates['link2'].leave}">
-                    </a>
-                    <a class="link3" href="https://www.linkedin.com/in/gerald-pesendorfer-432091246/" target="_blank">
-                        <img src="assets/img/sozials/linkedin.png" id="link3" (mouseenter)="onMouseEnter('link3')"
-                            (mouseleave)="onMouseOut('link3')" (touchend)="onMouseOut('link3')"
-                            (touchcancel)="onMouseOut('link3')"
-                            [ngClass]="{'hover-link': linkAnimationStates['link3'].enter, 'reset-link': linkAnimationStates['link3'].leave}">
-                    </a>
+            <div class="menu-footer-container">
+                <div class="menu-footer-content">
+                    <div>
+                        <p>{{ 'nav.p' | translate }}</p>
+                        <span>pesendorfer.gerald&#64;hotmail.com</span>
+                    </div>
+                    <div class="links">
+                        <a class="link1" href="https://github.com/Pesendorfer90" target="_blank">
+                            <img src="assets/img/sozials/github.png" id="link1" (mouseenter)="onMouseEnter('link1')"
+                                (mouseleave)="onMouseOut('link1')" (touchend)="onMouseOut('link1')"
+                                (touchcancel)="onMouseOut('link1')"
+                                [ngClass]="{'hover-link': linkAnimationStates['link1'].enter, 'reset-link': linkAnimationStates['link1'].leave}">
+                        </a>
+                        <a class="link2" href="mailto:pesendorfer.gerald@hotmail.com" (click)="navMenu()">
+                            <img src="assets/img/sozials/email.png" id="link2" (mouseenter)="onMouseEnter('link2')"
+                                (mouseleave)="onMouseOut('link2')" (touchend)="onMouseOut('link2')"
+                                (touchcancel)="onMouseOut('link2')"
+                                [ngClass]="{'hover-link': linkAnimationStates['link2'].enter, 'reset-link': linkAnimationStates['link2'].leave}">
+                        </a>
+                        <a class="link3" href="https://www.linkedin.com/in/gerald-pesendorfer-432091246/"
+                            target="_blank">
+                            <img src="assets/img/sozials/linkedin.png" id="link3" (mouseenter)="onMouseEnter('link3')"
+                                (mouseleave)="onMouseOut('link3')" (touchend)="onMouseOut('link3')"
+                                (touchcancel)="onMouseOut('link3')"
+                                [ngClass]="{'hover-link': linkAnimationStates['link3'].enter, 'reset-link': linkAnimationStates['link3'].leave}">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
