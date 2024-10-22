@@ -273,6 +273,7 @@
 .active {
     animation: button-active 0.125s ease-in-out forwards;
     transition: 0.1s ease-out;
+    cursor: pointer;
 
     &:hover {
         width: 338px !important;

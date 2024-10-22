@@ -56,7 +56,6 @@ header {
 .basic-information {
     height: 50%;
     width: 100%;
-    font-size: 23px;
     font-family: 'overpass';
     display: flex;
     justify-content: space-between;
@@ -73,7 +72,7 @@ header {
     overflow: hidden;
     text-overflow: ellipsis;
     height: calc(100% - 50px);
-
+    font-size: 23px;
 }
 
 .info-right {
@@ -107,6 +106,7 @@ header {
 
     >p {
         text-align: center;
+        font-size: 23px;
     }
 }
 
@@ -202,5 +202,113 @@ header {
                 }
             }
         }
+    }
+}
+
+
+@media (min-width: 1250px) and (max-height: 870px) {
+    .email {
+        font-size: 20px;
+    }
+}
+
+
+@media (min-width: 1250px) and (max-height: 782px) {
+    .email {
+        font-size: 18px;
+    }
+}
+
+
+@media (max-width: 1250px) and (min-width: 1250px) and (max-height: 870px) {
+    .email {
+        font-size: 20px;
+    }
+}
+
+
+@media (max-width: 1250px) and (min-width: 1250px) and (max-height: 780px) {
+    .email {
+        font-size: 18px;
+    }
+}
+
+
+@media (max-width: 1024px) and (min-width: 690px) and (max-height: 870px) {
+    .email {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 690px) and (max-height: 780px) {
+    .email {
+        font-size: 18px;
+    }
+}
+
+
+@media (max-width: 1024px) and (min-width: 690px) and (max-height: 722px) {
+    .email {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 690px) and (min-width: 580px) and (max-height: 870px) {
+    .email {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 690px) and (min-width: 580px) and (max-height: 780px) {
+    .email {
+        font-size: 18px;
+    }
+}
+
+
+@media (max-width: 690px) and (min-width: 580px) and (max-height: 722px) {
+    .email {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 580px) and (min-width: 450px) and (max-height: 870px) {
+    .email {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 580px) and (min-width: 450px) and (max-height: 780px) {
+    .email {
+        font-size: 18px;
+    }
+}
+
+
+@media (max-width: 580px) and (min-width: 0px) and (max-height: 722px) {
+    .email {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 450px) and (min-width: 0px) and (max-height: 870px) {
+    .email {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 450px) and (min-width: 0px) and (max-height: 780px) {
+    .email {
+        font-size: 18px;
+    }
+}
+
+
+@media (max-width: 450px) and (min-width: 0px) and (max-height: 722px) {
+    .email {
+        font-size: 16px;
     }
 }

@@ -101,7 +101,6 @@
 .image-base {
   width: 50%;
   position: relative;
-  cursor: pointer;
 
   &::before {
     content: "";
@@ -234,6 +233,21 @@
   @extend .description-base;
   opacity: 0;
   padding-right: 150px;
+}
+
+.project-link-base {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: calc(247px + 197px + 10px);
+}
+
+.project-link {
+  @extend .project-link-base;
+}
+
+.project-link-reverse {
+  @extend .project-link-base;
 }
 
 .github-link {

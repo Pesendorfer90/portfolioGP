@@ -38,22 +38,22 @@ export class ProjectsComponent implements OnInit {
       gitLink: 'https://github.com/Pesendorfer90/Pokedex',
       projectLink: 'http://gerald-pesendorfer.at/Pokedex/index.html'
     },
-    {
-      image: './assets/img/projects/under-construction.jpg',
-      name: '',
-      techStack: '',
-      description: '',
-      gitLink: '',
-      projectLink: ''
-    },
-    {
-      image: './assets/img/projects/under-construction.jpg',
-      name: '',
-      techStack: '',
-      description: '',
-      gitLink: '',
-      projectLink: ''
-    }
+    // {
+    //   image: './assets/img/projects/under-construction.jpg',
+    //   name: '',
+    //   techStack: '',
+    //   description: '',
+    //   gitLink: '',
+    //   projectLink: ''
+    // },
+    // {
+    //   image: './assets/img/projects/under-construction.jpg',
+    //   name: '',
+    //   techStack: '',
+    //   description: '',
+    //   gitLink: '',
+    //   projectLink: ''
+    // }
   ];
 
 

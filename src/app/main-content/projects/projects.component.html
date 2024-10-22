@@ -9,8 +9,7 @@
             <div id="countResponsiv" [class.count]="i % 2 === 0" [class.count-reverse]="i % 2 === 1">
                 0{{ i + 1 }}/0{{ items.length }}
             </div>
-            <a [class.image]="i % 2 === 0" [class.image-reverse]="i % 2 === 1" [href]="item.projectLink"
-                target="_blank">
+            <a [class.image]="i % 2 === 0" [class.image-reverse]="i % 2 === 1">
                 <img #imageTrigger class="preview-img" [src]="item.image" alt="Bild {{ i + 1 }}">
                 <img [class.pointer]="i % 2 === 0" [class.pointer-reverse]="i % 2 === 1"
                     [class.pointer-touch]="isTouchDevice && projectVisibility[i] && i % 2 === 0"
@@ -25,10 +24,16 @@
                     <h3>{{ item.name }}</h3>
                     <span>{{ item.techStack }}</span>
                     <p>{{ 'portfolio.projects.' + (i + 1) | translate }}</p>
-                    <a href="{{ item.gitLink }}" target="_blank" class="github-link"
-                    [class.github-link]="i % 2 === 0" [class.github-link-reverse]="i % 2 === 1">
-                        Github
-                    </a>
+                    <div [class.project-link]="i % 2 === 0" [class.project-link-reverse]="i % 2 === 1">
+                        <a [href]="item.gitLink" target="_blank" class="github-link" [class.github-link]="i % 2 === 0"
+                            [class.github-link-reverse]="i % 2 === 1">
+                            Github
+                        </a>
+                        <a [href]="item.projectLink" target="_blank" class="github-link"
+                            [class.github-link]="i % 2 === 0" [class.github-link-reverse]="i % 2 === 1">
+                            Live Test
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

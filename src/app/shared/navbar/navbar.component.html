@@ -36,7 +36,7 @@
                             (touchcancel)="onMouseOut('link1')"
                             [ngClass]="{'hover-link': linkAnimationStates['link1'].enter, 'reset-link': linkAnimationStates['link1'].leave}">
                     </a>
-                    <a class="link2" [routerLink]="['/']" fragment="contactSection" (click)="navMenu()">
+                    <a class="link2" href="mailto:pesendorfer.gerald@hotmail.com" (click)="navMenu()">
                         <img src="assets/img/sozials/email.png" id="link2" (mouseenter)="onMouseEnter('link2')"
                             (mouseleave)="onMouseOut('link2')" (touchend)="onMouseOut('link2')"
                             (touchcancel)="onMouseOut('link2')"

@@ -278,6 +278,23 @@
       font-size: 35px !important;
     }
   }
+
+  .project-link-base {
+    flex-direction: column;
+    justify-content: unset;
+  }
+
+  .project-link {
+    align-items: flex-start;
+  }
+
+  .project-link-reverse {
+    align-items: flex-end;
+  }
+
+  .github-link {
+    margin: 5px 0 5px 0;
+  }
 }
 
 
