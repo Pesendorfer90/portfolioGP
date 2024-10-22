@@ -27,7 +27,7 @@ export class ProjectsComponent implements OnInit {
       name: 'Join',
       techStack: 'Angular | TypeScript | HTML | CSS | Firebase',
       description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
-      gitLink: 'https://github.com/Pesendorfer90/join',
+      gitLink: 'https://github.com/Pesendorfer90/Join-v1.1',
       projectLink: 'http://gerald-pesendorfer.at/join/login.html'
     },
     {
