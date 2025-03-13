@@ -282,5 +282,13 @@
   transform: translate(+410%);
 }
 
+.trigger {
+  position: absolute;
+  top: 30%;
+  height: 10px !important;
+  width: 10px !important;
+  z-index: -999;
+}
+
 @import 'projects-responsiv.component';
 @import 'projects-touch.component';

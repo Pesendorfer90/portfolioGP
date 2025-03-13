@@ -53,7 +53,7 @@ export class ProjectsComponent implements OnInit {
   monitoredDiv?: ElementRef<HTMLDivElement>;
   @Output() projectElement = new EventEmitter<boolean>();
 
-  @ViewChildren('imageTrigger') projects!: QueryList<ElementRef>;
+  @ViewChildren('hoverTrigger') projects!: QueryList<ElementRef>;
 
   projectVisibility: boolean[] = [];
   projectEvents: EventEmitter<boolean>[] = [];
