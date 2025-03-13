@@ -31,6 +31,14 @@ export class ProjectsComponent implements OnInit {
       projectLink: 'http://gerald-pesendorfer.at/join/login.html'
     },
     {
+      image: './assets/img/projects/dabubble.PNG',
+      name: 'DaBubble',
+      techStack: 'Angular | TypeScript | HTML | SCSS | Firebase',
+      description: 'Based on Slack, this app offers a user-friendly platform for optimizing team communication. Real-time messages and a structured channel organization make communication within the team noticeably easier.',
+      gitLink: 'https://github.com/Pesendorfer90/dabubble',
+      projectLink: 'http://gerald-pesendorfer.at/dabubble'
+    },
+    {
       image: './assets/img/projects/pokedex.PNG',
       name: 'Pokédex',
       techStack: 'JavaScript | HTML | CSS | Api',

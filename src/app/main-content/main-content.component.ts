@@ -5,7 +5,6 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { MySkillsComponent } from './my-skills/my-skills.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from "./contact/contact.component";
-import { ScrollbarService } from '../service/scrollbar.service';
 import { ArrowComponent } from "./arrow/arrow.component";
 
 @Component({
@@ -28,6 +27,4 @@ export class MainContentComponent {
   arrowVisibleSkill: any;
   arrowVisibleProject: any;
   arrowVisibleContact: any;
-
-  constructor(public scrollbarService: ScrollbarService) { }
 }

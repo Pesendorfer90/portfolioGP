@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-// import { TranslateService } from '@ngx-translate/core';
 import { languages } from '../../config/data';
 import { TranslationService } from '../../../service/translation.service';
 

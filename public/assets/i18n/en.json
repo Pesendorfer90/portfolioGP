@@ -26,8 +26,8 @@
     "projects": {
       "1": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
       "2": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
-      "3": "Based on the PokéAPI a simple library that provides and catalogues pokemon information.",
-      "4": "",
+      "3": "Based on Slack, this app offers a user-friendly platform for optimizing team communication. Real-time messages and a structured channel organization make communication within the team noticeably easier.",
+      "4": "Based on the PokéAPI a simple library that provides and catalogues pokemon information.",
       "5": ""
     }
   },
